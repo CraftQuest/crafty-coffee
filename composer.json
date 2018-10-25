@@ -20,11 +20,11 @@
   },
   "require": {
     "php": ">=7.0.0",
-    "craftcms/cms": "3.0.0-RC8",
+    "craftcms/cms": "3.0.28",
     "vlucas/phpdotenv": "^2.4.0",
     "roave/security-advisories": "dev-master",
-    "craftcms/contact-form": "2.1.1",
-    "craftcms/ckeditor": "1.0.0-beta.1"
+    "craftcms/contact-form": "2.2.2",
+    "craftcms/ckeditor": "1.0.0-beta.2"
   },
   "autoload": {
     "psr-4": {
