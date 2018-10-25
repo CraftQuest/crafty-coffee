@@ -1,0 +1,67 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Crafty Coffee</title>
+    <link rel="stylesheet" href="/bower_components/foundation/css/foundation.css"/>
+    <link rel="stylesheet" href="/stylesheets/app.css"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700|Fauna+One|Pacifico|Merriweather+Sans:400,700' rel='stylesheet'
+          type='text/css'>
+
+</head>
+<body>
+<nav class="top-bar" data-topbar role="navigation">
+    <div class="top-left-left">
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="/"><span class="scripty">Crafty</span></a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon">
+                <a href="#"><span>Menu</span></a>
+            </li>
+        </ul>
+        </div>
+    <section class="top-bar-section">
+        <div class="top-bar-right">
+            {% set navEntries = craft.entries.section('about').all() %}
+            <ul class="right">
+                {% nav entry in navEntries %}
+                <li {% if entry.hasDescendants() %}class="has-dropdown"{% endif %}><a href="{{ entry.url }}">{{ entry.title }}</a>
+                    {% ifchildren %}
+                    <ul class="dropdown">
+                        {% children %}
+                    </ul>
+                    {% endifchildren %}
+                </li>
+                {% endnav %}
+                <li>
+                    <a href="#">Our Signature Drinks</a>
+                </li>
+                <li>
+                    <a href="#">Our Recipes</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+</nav>
+
+{% block main %}
+
+{% endblock %}
+
+<div class="row">
+    <div class="footer">
+        <p>Copyright 2018 Crafty Coffee, Inc. All rights reserved. Enjoy the buzz! (Part of a <a href="https://mijingo.com/craft">Mijingo course</a>)</p>
+    </div>
+</div>
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/foundation/js/foundation.min.js"></script>
+
+<script>
+    $(document).foundation();
+</script>
+</body>
+</html>
