@@ -28,7 +28,7 @@ categoryGroups:
     structure:
       maxLevels: '2'
       uid: fa651328-1651-4c7a-8d60-c5a9a47b80ba
-dateModified: 1540582531
+dateModified: 1540582789
 email:
   fromEmail: ryan@mijingo.com
   fromName: 'Crafty Coffee'
@@ -131,6 +131,21 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\Assets
+  2c688d2d-e8e3-45f6-b33e-1c4b5e83319a:
+    contentColumnType: text
+    context: global
+    fieldGroup: eade4d0e-154d-4fa6-9ec4-6b117060ced3
+    handle: pageBodyCopy
+    instructions: ''
+    name: 'Page Body Copy'
+    searchable: true
+    settings:
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
   2e589bf8-04f7-411f-a8f2-dbad1a553dbb:
     contentColumnType: text
     context: global
