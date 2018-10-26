@@ -28,7 +28,7 @@ categoryGroups:
     structure:
       maxLevels: '2'
       uid: fa651328-1651-4c7a-8d60-c5a9a47b80ba
-dateModified: 1540561884
+dateModified: 1540582531
 email:
   fromEmail: ryan@mijingo.com
   fromName: 'Crafty Coffee'
@@ -788,6 +788,15 @@ users:
   photoVolumeUid: null
   requireEmailVerification: true
 volumes:
+  07ddde76-f551-48dc-a43d-07020d8a989b:
+    handle: recipePdfs
+    hasUrls: true
+    name: 'Recipe PDFs'
+    settings:
+      path: '@webroot/pdfs'
+    sortOrder: 2
+    type: craft\volumes\Local
+    url: '@web'
   6cd5f724-b88e-4084-8f92-e00cc7dea583:
     handle: drinks
     hasUrls: '1'
