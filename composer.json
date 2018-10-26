@@ -20,7 +20,7 @@
   },
   "require": {
     "php": ">=7.0.0",
-    "craftcms/cms": "3.0.28",
+    "craftcms/cms": "3.1.x-dev as 3.1.0-alpha.1",
     "vlucas/phpdotenv": "^2.4.0",
     "roave/security-advisories": "dev-master",
     "craftcms/contact-form": "2.2.2",
