@@ -28,7 +28,7 @@ categoryGroups:
     structure:
       maxLevels: '2'
       uid: fa651328-1651-4c7a-8d60-c5a9a47b80ba
-dateModified: 1540674603
+dateModified: 1540679151
 email:
   fromEmail: ryan@mijingo.com
   fromName: 'Crafty Coffee'
@@ -615,6 +615,36 @@ sections:
         hasUrls: true
         template: ''
         uriFormat: 'welchisms/{slug}'
+    type: channel
+  4b31f0a5-bddb-478a-86d5-167ddbf00ec8:
+    enableVersioning: true
+    entryTypes:
+      ed73817f-0ab6-4b75-90fc-4138dac78297:
+        handle: irelanisms
+        hasTitleField: true
+        name: Irelanisms
+        sortOrder: 1
+        titleFormat: null
+        titleLabel: Title
+    handle: irelanisms
+    name: Irelanisms
+    propagateEntries: true
+    siteSettings:
+      0cb94306-5f6d-4c44-a78e-65ce0703913c:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: 'irelanisms/{slug}'
+      ab30b810-b780-42f5-8619-f00e67c4c762:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: 'irelanisms/{slug}'
+      d5f09a60-cd1b-4e3c-811b-43fa6d152dc7:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: 'irelanisms/{slug}'
     type: channel
   5fc2aad1-c7b2-4080-a631-c1bbcd9f800e:
     enableVersioning: '1'
