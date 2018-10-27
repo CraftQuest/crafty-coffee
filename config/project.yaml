@@ -28,7 +28,7 @@ categoryGroups:
     structure:
       maxLevels: '2'
       uid: fa651328-1651-4c7a-8d60-c5a9a47b80ba
-dateModified: 1540586861
+dateModified: 1540674603
 email:
   fromEmail: ryan@mijingo.com
   fromName: 'Crafty Coffee'
@@ -586,6 +586,36 @@ sections:
         template: index.twig
         uriFormat: /
     type: single
+  0dbfef2b-b402-45b0-b8ca-5d05cb00bf92:
+    enableVersioning: true
+    entryTypes:
+      b79a81d1-e33a-475a-894f-a4c31ee325ba:
+        handle: welchisms
+        hasTitleField: true
+        name: Welchisms
+        sortOrder: 1
+        titleFormat: null
+        titleLabel: Title
+    handle: welchisms
+    name: Welchisms
+    propagateEntries: true
+    siteSettings:
+      0cb94306-5f6d-4c44-a78e-65ce0703913c:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: 'welchisms/{slug}'
+      ab30b810-b780-42f5-8619-f00e67c4c762:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: 'welchisms/{slug}'
+      d5f09a60-cd1b-4e3c-811b-43fa6d152dc7:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: 'welchisms/{slug}'
+    type: channel
   5fc2aad1-c7b2-4080-a631-c1bbcd9f800e:
     enableVersioning: '1'
     entryTypes:
@@ -745,6 +775,36 @@ sections:
         hasUrls: true
         template: ''
         uriFormat: 'test/{slug}'
+    type: channel
+  e6acef39-f6a0-4eed-886f-ca50d05d14ff:
+    enableVersioning: true
+    entryTypes:
+      d4321625-676a-4524-909e-b644fc1b4124:
+        handle: ryanisms
+        hasTitleField: true
+        name: Ryanisms
+        sortOrder: 1
+        titleFormat: null
+        titleLabel: Title
+    handle: ryanisms
+    name: Ryanisms
+    propagateEntries: true
+    siteSettings:
+      0cb94306-5f6d-4c44-a78e-65ce0703913c:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: 'ryanisms/{slug}'
+      ab30b810-b780-42f5-8619-f00e67c4c762:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: 'ryanisms/{slug}'
+      d5f09a60-cd1b-4e3c-811b-43fa6d152dc7:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: 'ryanisms/{slug}'
     type: channel
   fec4e53c-d4fa-458f-a325-9c4edaa7b557:
     enableVersioning: '1'
