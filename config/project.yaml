@@ -28,7 +28,7 @@ categoryGroups:
     structure:
       maxLevels: '2'
       uid: fa651328-1651-4c7a-8d60-c5a9a47b80ba
-dateModified: 1540679151
+dateModified: 1540821500
 email:
   fromEmail: ryan@mijingo.com
   fromName: 'Crafty Coffee'
@@ -40,6 +40,8 @@ fieldGroups:
     name: Drinks
   420b4f9d-733a-47e6-9031-bbdfb7754c81:
     name: Recipes
+  ac62c5e2-9e7a-46da-b8ac-21d6f35d91f8:
+    name: Ryanisms
   af356800-143a-4d5b-a0e7-811a7f167bd0:
     name: Globals
   b4532ef1-5542-49bb-8d2a-984a68900f6d:
@@ -85,6 +87,21 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Table
+  202cccc2-0daa-46bc-8565-ceff655c1db6:
+    contentColumnType: text
+    context: global
+    fieldGroup: ac62c5e2-9e7a-46da-b8ac-21d6f35d91f8
+    handle: quote
+    instructions: ''
+    name: Quote
+    searchable: true
+    settings:
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
   236920c7-7ad4-49fb-908e-d7a3fe63db8d:
     contentColumnType: string
     context: global
