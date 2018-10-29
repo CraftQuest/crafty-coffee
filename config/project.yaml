@@ -1,0 +1,823 @@
+categoryGroups:
+  85aaa45b-96ee-4eeb-9170-a842e0ce42c7:
+    fieldLayouts:
+      9eecf3b9-25bb-4b1d-b2c1-ab2fc5d30c68:
+        tabs:
+          -
+            fields:
+              401c5576-4f56-412f-a576-f41f9ee31cf6:
+                required: '0'
+                sortOrder: '1'
+            name: Style
+            sortOrder: '1'
+    handle: drinkStyles
+    name: 'Drink Styles'
+    siteSettings:
+      0cb94306-5f6d-4c44-a78e-65ce0703913c:
+        hasUrls: '1'
+        template: styles/_category
+        uriFormat: 'styles/{slug}'
+      ab30b810-b780-42f5-8619-f00e67c4c762:
+        hasUrls: '1'
+        template: styles/_category
+        uriFormat: 'styles/{slug}'
+      d5f09a60-cd1b-4e3c-811b-43fa6d152dc7:
+        hasUrls: '1'
+        template: styles/_category
+        uriFormat: 'styles/{slug}'
+    structure:
+      maxLevels: '2'
+      uid: fa651328-1651-4c7a-8d60-c5a9a47b80ba
+dateModified: 1540823095
+email:
+  fromEmail: ryan@mijingo.com
+  fromName: 'Crafty Coffee'
+  transportType: craft\mail\transportadapters\Sendmail
+fieldGroups:
+  0737b893-d941-47d2-93b0-33208f4486e0:
+    name: Common
+  319cb121-191a-4bdb-ad8f-c782feaef564:
+    name: Drinks
+  420b4f9d-733a-47e6-9031-bbdfb7754c81:
+    name: Recipes
+  af356800-143a-4d5b-a0e7-811a7f167bd0:
+    name: Globals
+  b4532ef1-5542-49bb-8d2a-984a68900f6d:
+    name: News
+  eade4d0e-154d-4fa6-9ec4-6b117060ced3:
+    name: About
+  fa050bd7-0ea9-49bf-b3d8-cb45bee0c25e:
+    name: General
+fields:
+  0a8401f5-2147-49ed-ab88-0e38ee22e0fa:
+    contentColumnType: text
+    context: 'matrixBlockType:d864ce6c-12fc-4165-9e2b-ea7549d8b3ae'
+    fieldGroup: null
+    handle: stepsTitle
+    instructions: ''
+    name: 'Steps Title'
+    searchable: '1'
+    settings:
+      charLimit: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  1391b485-a67c-45e5-acdf-0fbbb99263e8:
+    contentColumnType: text
+    context: 'matrixBlockType:d864ce6c-12fc-4165-9e2b-ea7549d8b3ae'
+    fieldGroup: null
+    handle: stepsContent
+    instructions: ''
+    name: 'Steps Content'
+    searchable: '1'
+    settings:
+      columnType: text
+      columns:
+        col1:
+          handle: stepsInstructions
+          heading: 'Steps Instructions'
+          type: singleline
+          width: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  236920c7-7ad4-49fb-908e-d7a3fe63db8d:
+    contentColumnType: string
+    context: global
+    fieldGroup: 0737b893-d941-47d2-93b0-33208f4486e0
+    handle: style
+    instructions: ''
+    name: Style
+    searchable: '1'
+    settings:
+      branchLimit: '1'
+      limit: null
+      localizeRelations: false
+      selectionLabel: 'Add a style'
+      source: 'group:85aaa45b-96ee-4eeb-9170-a842e0ce42c7'
+      sources: '*'
+      targetSiteId: null
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Categories
+  2bc6476e-98e2-457b-9f97-78dab74ba4a4:
+    contentColumnType: string
+    context: 'matrixBlockType:e894aa86-69d7-4ca9-8979-f6eb043e2683'
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: '1'
+    settings:
+      allowedKinds: null
+      defaultUploadLocationSource: 'folder:a84c7c74-9613-46ea-b7d6-2baebe8729ce'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: ''
+      selectionLabel: 'Add an image for this block.'
+      singleUploadLocationSource: 'folder:a84c7c74-9613-46ea-b7d6-2baebe8729ce'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  2c688d2d-e8e3-45f6-b33e-1c4b5e83319a:
+    contentColumnType: text
+    context: global
+    fieldGroup: eade4d0e-154d-4fa6-9ec4-6b117060ced3
+    handle: pageBodyCopy
+    instructions: ''
+    name: 'Page Body Copy'
+    searchable: true
+    settings:
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+  2e589bf8-04f7-411f-a8f2-dbad1a553dbb:
+    contentColumnType: text
+    context: global
+    fieldGroup: eade4d0e-154d-4fa6-9ec4-6b117060ced3
+    handle: subtitle
+    instructions: ''
+    name: Subtitle
+    searchable: '1'
+    settings:
+      charLimit: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  3221ed5d-6cf7-443f-8ab3-2af981b308fe:
+    contentColumnType: text
+    context: 'matrixBlockType:e72ef425-e208-47b2-85f5-ab661d76e102'
+    fieldGroup: null
+    handle: ingredients
+    instructions: ''
+    name: Ingredients
+    searchable: '1'
+    settings:
+      columnType: text
+      columns:
+        col1:
+          handle: amount
+          heading: Amount
+          type: singleline
+          width: ''
+        col2:
+          handle: ingredient
+          heading: Ingredient
+          type: singleline
+          width: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  401c5576-4f56-412f-a576-f41f9ee31cf6:
+    contentColumnType: text
+    context: global
+    fieldGroup: 420b4f9d-733a-47e6-9031-bbdfb7754c81
+    handle: styleDescription
+    instructions: ''
+    name: 'Style Description'
+    searchable: '1'
+    settings:
+      charLimit: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  694b6c0f-ce93-43f1-801b-90ac16df28ed:
+    contentColumnType: text
+    context: global
+    fieldGroup: eade4d0e-154d-4fa6-9ec4-6b117060ced3
+    handle: pageIntro
+    instructions: ''
+    name: 'Page Intro'
+    searchable: '1'
+    settings:
+      charLimit: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  7527ed8a-4267-48e2-b707-45a6b98ca157:
+    contentColumnType: text
+    context: global
+    fieldGroup: af356800-143a-4d5b-a0e7-811a7f167bd0
+    handle: siteDescription
+    instructions: ''
+    name: 'Site Description'
+    searchable: '1'
+    settings:
+      charLimit: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  8318e449-2fa0-44b1-ade3-552386075971:
+    contentColumnType: text
+    context: 'matrixBlockType:4cb71c6c-f4ca-4251-8235-03bd7fb5fc11'
+    fieldGroup: null
+    handle: tipContent
+    instructions: ''
+    name: 'Tip Content'
+    searchable: '1'
+    settings:
+      charLimit: ''
+      columnType: text
+      initialRows: '4'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  87803860-4cf0-408c-9e84-397c424eaf05:
+    contentColumnType: string
+    context: global
+    fieldGroup: 420b4f9d-733a-47e6-9031-bbdfb7754c81
+    handle: recipeContents
+    instructions: ''
+    name: 'Recipe Contents'
+    searchable: '1'
+    settings:
+      contentTable: '{{%matrixcontent_recipecontents}}'
+      localizeBlocks: false
+      maxBlocks: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Matrix
+  905d8c76-90aa-492b-b4a6-9232dd3c4be5:
+    contentColumnType: string
+    context: global
+    fieldGroup: 319cb121-191a-4bdb-ad8f-c782feaef564
+    handle: drinkImage
+    instructions: ''
+    name: 'Drink Image'
+    searchable: '1'
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'folder:a84c7c74-9613-46ea-b7d6-2baebe8729ce'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Choose a drink image'
+      singleUploadLocationSource: 'folder:a84c7c74-9613-46ea-b7d6-2baebe8729ce'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'folder:a84c7c74-9613-46ea-b7d6-2baebe8729ce'
+      targetSiteId: null
+      useSingleFolder: ''
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  912353f4-c088-499e-864a-3da0fc19fd82:
+    contentColumnType: text
+    context: global
+    fieldGroup: 420b4f9d-733a-47e6-9031-bbdfb7754c81
+    handle: recipeSnapshot
+    instructions: ''
+    name: 'Recipe Snapshot'
+    searchable: '1'
+    settings:
+      columnType: text
+      columns:
+        col1:
+          handle: snapshotText
+          heading: 'Snapshot Text'
+          type: singleline
+          width: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+  a43fc23c-14c9-448a-a481-162395d6ec13:
+    contentColumnType: text
+    context: global
+    fieldGroup: 319cb121-191a-4bdb-ad8f-c782feaef564
+    handle: drinkIntro
+    instructions: 'A short introduction (one sentence) that describes the drink. Be creative!'
+    name: 'Drink Intro'
+    searchable: '1'
+    settings:
+      charLimit: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\PlainText
+  c4f0305b-df23-4920-b0c8-2105ec5bbda1:
+    contentColumnType: text
+    context: 'matrixBlockType:3af181f7-70c2-473a-8753-d016f18682f7'
+    fieldGroup: null
+    handle: bodyContent
+    instructions: ''
+    name: 'Body Content'
+    searchable: '1'
+    settings:
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+  db4d75df-18a3-4c76-a0e9-3463d56bf387:
+    contentColumnType: text
+    context: global
+    fieldGroup: b4532ef1-5542-49bb-8d2a-984a68900f6d
+    handle: newsExcerpt
+    instructions: ''
+    name: 'News Excerpt'
+    searchable: '1'
+    settings:
+      charLimit: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  dee49864-8a19-4e79-9507-86ac050d5612:
+    contentColumnType: text
+    context: global
+    fieldGroup: fa050bd7-0ea9-49bf-b3d8-cb45bee0c25e
+    handle: pageCopy
+    instructions: ''
+    name: 'Page Copy'
+    searchable: '1'
+    settings:
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+  df7fcf64-6a2f-4d76-89ed-3f80ba537163:
+    contentColumnType: text
+    context: global
+    fieldGroup: b4532ef1-5542-49bb-8d2a-984a68900f6d
+    handle: newsBody
+    instructions: ''
+    name: 'News Body'
+    searchable: '1'
+    settings:
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+  e5966e9c-2221-419b-8dd9-d2ba975da3fa:
+    contentColumnType: datetime
+    context: global
+    fieldGroup: 319cb121-191a-4bdb-ad8f-c782feaef564
+    handle: dateAddedToMenu
+    instructions: ''
+    name: 'Date Added to Menu'
+    searchable: '1'
+    settings:
+      minuteIncrement: '30'
+      showDate: true
+      showTime: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Date
+  e720b498-35c0-4ca2-92a8-4fc947f3823b:
+    contentColumnType: string
+    context: global
+    fieldGroup: 319cb121-191a-4bdb-ad8f-c782feaef564
+    handle: relatedRecipe
+    instructions: ''
+    name: 'Related Recipe'
+    searchable: '1'
+    settings:
+      limit: '1'
+      localizeRelations: false
+      selectionLabel: 'Add a recipe'
+      source: null
+      sources:
+        - 'section:b0b0f3e8-df8e-481f-a2f9-2c4e23d48904'
+      targetSiteId: null
+      viewMode: null
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Entries
+  fd7bed69-83a0-4517-8e71-e02b471135a0:
+    contentColumnType: text
+    context: 'matrixBlockType:e894aa86-69d7-4ca9-8979-f6eb043e2683'
+    fieldGroup: null
+    handle: imageCaption
+    instructions: ''
+    name: 'Image Caption'
+    searchable: '1'
+    settings:
+      charLimit: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+globalSets:
+  d28d21f9-9016-4f24-a371-c2084fbd3578:
+    fieldLayouts:
+      7b72554c-0a1e-4ffc-ae56-561ef97bf4b5:
+        tabs:
+          -
+            fields:
+              7527ed8a-4267-48e2-b707-45a6b98ca157:
+                required: '0'
+                sortOrder: '1'
+            name: Globals
+            sortOrder: '1'
+    handle: siteInformation
+    name: 'Site Information'
+matrixBlockTypes:
+  3af181f7-70c2-473a-8753-d016f18682f7:
+    field: 87803860-4cf0-408c-9e84-397c424eaf05
+    fieldLayouts:
+      7f6efc69-0838-4782-ae02-6422e8a1acba:
+        tabs:
+          -
+            fields:
+              c4f0305b-df23-4920-b0c8-2105ec5bbda1:
+                required: '0'
+                sortOrder: '1'
+            name: Content
+            sortOrder: '1'
+    handle: recipeCopy
+    name: 'Recipe Copy'
+    sortOrder: '3'
+  4cb71c6c-f4ca-4251-8235-03bd7fb5fc11:
+    field: 87803860-4cf0-408c-9e84-397c424eaf05
+    fieldLayouts:
+      85a51e00-7707-4c6c-96f7-71d6bf109671:
+        tabs:
+          -
+            fields:
+              8318e449-2fa0-44b1-ade3-552386075971:
+                required: '0'
+                sortOrder: '1'
+            name: Content
+            sortOrder: '1'
+    handle: recipeTip
+    name: 'Recipe Tip'
+    sortOrder: '2'
+  d864ce6c-12fc-4165-9e2b-ea7549d8b3ae:
+    field: 87803860-4cf0-408c-9e84-397c424eaf05
+    fieldLayouts:
+      593e5bd9-ed02-4ba9-9d5f-a573688cf0d4:
+        tabs:
+          -
+            fields:
+              0a8401f5-2147-49ed-ab88-0e38ee22e0fa:
+                required: '0'
+                sortOrder: '1'
+              1391b485-a67c-45e5-acdf-0fbbb99263e8:
+                required: '0'
+                sortOrder: '2'
+            name: Content
+            sortOrder: '1'
+    handle: recipeSteps
+    name: 'Recipe Steps'
+    sortOrder: '4'
+  e72ef425-e208-47b2-85f5-ab661d76e102:
+    field: 87803860-4cf0-408c-9e84-397c424eaf05
+    fieldLayouts:
+      60d7483f-a396-4a91-8638-7b37438e9c9d:
+        tabs:
+          -
+            fields:
+              3221ed5d-6cf7-443f-8ab3-2af981b308fe:
+                required: '0'
+                sortOrder: '1'
+            name: Content
+            sortOrder: '1'
+    handle: recipeIngredients
+    name: 'Recipe Ingredients'
+    sortOrder: '5'
+  e894aa86-69d7-4ca9-8979-f6eb043e2683:
+    field: 87803860-4cf0-408c-9e84-397c424eaf05
+    fieldLayouts:
+      daa840bd-2482-4a0b-8b71-36f7f69b7d93:
+        tabs:
+          -
+            fields:
+              2bc6476e-98e2-457b-9f97-78dab74ba4a4:
+                required: '0'
+                sortOrder: '1'
+              fd7bed69-83a0-4517-8e71-e02b471135a0:
+                required: '0'
+                sortOrder: '2'
+            name: Content
+            sortOrder: '1'
+    handle: recipeImage
+    name: 'Recipe Image'
+    sortOrder: '1'
+plugins:
+  ckeditor:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  contact-form:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  element-api:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+sections:
+  016e92ff-2c08-4a5a-9591-70576d16100f:
+    enableVersioning: '0'
+    entryTypes:
+      f650a556-a6ad-4367-a5c0-251030e0aa78:
+        handle: homepage
+        hasTitleField: '0'
+        name: Homepage
+        sortOrder: '1'
+        titleFormat: '{section.name|raw}'
+        titleLabel: null
+    handle: homepage
+    name: Homepage
+    propagateEntries: '1'
+    siteSettings:
+      ab30b810-b780-42f5-8619-f00e67c4c762:
+        enabledByDefault: '1'
+        hasUrls: '1'
+        template: de/index.twig
+        uriFormat: __home__
+      d5f09a60-cd1b-4e3c-811b-43fa6d152dc7:
+        enabledByDefault: '1'
+        hasUrls: '1'
+        template: index.twig
+        uriFormat: /
+    type: single
+  5fc2aad1-c7b2-4080-a631-c1bbcd9f800e:
+    enableVersioning: '1'
+    entryTypes:
+      eabce138-b2f3-449e-af77-aba1bf89a051:
+        fieldLayouts:
+          fe985c93-1e23-4e08-8476-507ba28f3879:
+            tabs:
+              -
+                fields:
+                  236920c7-7ad4-49fb-908e-d7a3fe63db8d:
+                    required: '0'
+                    sortOrder: '1'
+                  905d8c76-90aa-492b-b4a6-9232dd3c4be5:
+                    required: '1'
+                    sortOrder: '2'
+                  a43fc23c-14c9-448a-a481-162395d6ec13:
+                    required: '0'
+                    sortOrder: '3'
+                  dee49864-8a19-4e79-9507-86ac050d5612:
+                    required: '0'
+                    sortOrder: '4'
+                  e5966e9c-2221-419b-8dd9-d2ba975da3fa:
+                    required: '0'
+                    sortOrder: '5'
+                  e720b498-35c0-4ca2-92a8-4fc947f3823b:
+                    required: '0'
+                    sortOrder: '6'
+                name: Drinks
+                sortOrder: '1'
+        handle: drinks
+        hasTitleField: '1'
+        name: Drinks
+        sortOrder: '1'
+        titleFormat: null
+        titleLabel: 'Drink Name'
+    handle: drinks
+    name: Drinks
+    propagateEntries: '1'
+    siteSettings:
+      0cb94306-5f6d-4c44-a78e-65ce0703913c:
+        enabledByDefault: '1'
+        hasUrls: '1'
+        template: drinks/_entry
+        uriFormat: 'drinks/{slug}'
+      ab30b810-b780-42f5-8619-f00e67c4c762:
+        enabledByDefault: '1'
+        hasUrls: '1'
+        template: drinks/_entry
+        uriFormat: 'getraenke/{slug}'
+      d5f09a60-cd1b-4e3c-811b-43fa6d152dc7:
+        enabledByDefault: '1'
+        hasUrls: '1'
+        template: drinks/_entry
+        uriFormat: 'drinks/{slug}'
+    type: channel
+  a6335f97-2080-43cd-9f53-abe403373996:
+    enableVersioning: '1'
+    entryTypes:
+      f9557e52-0255-4777-96a7-14a37a410399:
+        fieldLayouts:
+          45132e0d-7e4f-4bd3-a58b-c86eb601df0f:
+            tabs:
+              -
+                fields:
+                  db4d75df-18a3-4c76-a0e9-3463d56bf387:
+                    required: '0'
+                    sortOrder: '1'
+                  df7fcf64-6a2f-4d76-89ed-3f80ba537163:
+                    required: '1'
+                    sortOrder: '2'
+                name: News
+                sortOrder: '1'
+        handle: news
+        hasTitleField: '1'
+        name: News
+        sortOrder: '1'
+        titleFormat: null
+        titleLabel: Headline
+    handle: news
+    name: News
+    propagateEntries: '1'
+    siteSettings:
+      d5f09a60-cd1b-4e3c-811b-43fa6d152dc7:
+        enabledByDefault: '1'
+        hasUrls: '1'
+        template: news/_entry
+        uriFormat: 'news/{slug}'
+    type: channel
+  b0b0f3e8-df8e-481f-a2f9-2c4e23d48904:
+    enableVersioning: '1'
+    entryTypes:
+      09ac828e-bcdd-4210-9bec-e8e3d37297e0:
+        fieldLayouts:
+          8e557e67-31fa-4dec-8b22-65f2cbb1dbd1:
+            tabs:
+              -
+                fields:
+                  236920c7-7ad4-49fb-908e-d7a3fe63db8d:
+                    required: '0'
+                    sortOrder: '1'
+                  694b6c0f-ce93-43f1-801b-90ac16df28ed:
+                    required: '0'
+                    sortOrder: '3'
+                  87803860-4cf0-408c-9e84-397c424eaf05:
+                    required: '0'
+                    sortOrder: '5'
+                  905d8c76-90aa-492b-b4a6-9232dd3c4be5:
+                    required: '0'
+                    sortOrder: '2'
+                  912353f4-c088-499e-864a-3da0fc19fd82:
+                    required: '0'
+                    sortOrder: '4'
+                name: Recipes
+                sortOrder: '1'
+        handle: recipes
+        hasTitleField: '1'
+        name: Recipes
+        sortOrder: '1'
+        titleFormat: null
+        titleLabel: Title
+    handle: recipes
+    name: Recipes
+    propagateEntries: '1'
+    siteSettings:
+      d5f09a60-cd1b-4e3c-811b-43fa6d152dc7:
+        enabledByDefault: '1'
+        hasUrls: '1'
+        template: recipes/_entry
+        uriFormat: 'recipes/{slug}'
+    type: channel
+  fec4e53c-d4fa-458f-a325-9c4edaa7b557:
+    enableVersioning: '1'
+    entryTypes:
+      9d2b0781-25c2-4db1-b6bf-0de153e2c02d:
+        fieldLayouts:
+          c729ca99-8385-485f-97cd-1f0e8eceba05:
+            tabs:
+              -
+                fields:
+                  2e589bf8-04f7-411f-a8f2-dbad1a553dbb:
+                    required: '0'
+                    sortOrder: '1'
+                  694b6c0f-ce93-43f1-801b-90ac16df28ed:
+                    required: '0'
+                    sortOrder: '2'
+                  dee49864-8a19-4e79-9507-86ac050d5612:
+                    required: '1'
+                    sortOrder: '3'
+                name: About
+                sortOrder: '1'
+        handle: about
+        hasTitleField: '1'
+        name: About
+        sortOrder: '1'
+        titleFormat: null
+        titleLabel: 'Page Title'
+    handle: about
+    name: About
+    propagateEntries: '1'
+    siteSettings:
+      d5f09a60-cd1b-4e3c-811b-43fa6d152dc7:
+        enabledByDefault: '1'
+        hasUrls: '1'
+        template: about/_entry
+        uriFormat: '{parent.uri}/{slug}'
+    structure:
+      maxLevels: null
+      uid: 513be269-c0ba-4bd5-af8f-75378f9b644b
+    type: structure
+siteGroups:
+  110e06e2-c32d-421f-8cf5-cd7b2e25de1c:
+    name: 'Crafty Coffee'
+  9c2158cd-e7b9-42da-b2dc-57bbfeee3c07:
+    name: English
+  c2683e88-e6c3-4580-a96c-332a8a3f827d:
+    name: German
+sites:
+  0cb94306-5f6d-4c44-a78e-65ce0703913c:
+    baseUrl: 'https://craftyroasterei.dev'
+    handle: craftyRoasterei
+    hasUrls: '1'
+    language: en-US
+    name: 'Crafty Roasterei'
+    primary: '0'
+    siteGroup: 110e06e2-c32d-421f-8cf5-cd7b2e25de1c
+    sortOrder: '3'
+  ab30b810-b780-42f5-8619-f00e67c4c762:
+    baseUrl: 'https://de.craftycoffee.dev/'
+    handle: kraftyKaffee
+    hasUrls: '1'
+    language: de
+    name: 'Krafty Kaffee'
+    primary: '0'
+    siteGroup: c2683e88-e6c3-4580-a96c-332a8a3f827d
+    sortOrder: '2'
+  d5f09a60-cd1b-4e3c-811b-43fa6d152dc7:
+    baseUrl: '@web'
+    handle: default
+    hasUrls: true
+    language: en-US
+    name: 'Crafty Coffee'
+    primary: true
+    siteGroup: 9c2158cd-e7b9-42da-b2dc-57bbfeee3c07
+    sortOrder: 1
+system:
+  edition: solo
+  live: true
+  name: 'Crafty Coffee'
+  schemaVersion: 3.1.4
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true
+volumes:
+  07ddde76-f551-48dc-a43d-07020d8a989b:
+    handle: recipePdfs
+    hasUrls: true
+    name: 'Recipe PDFs'
+    settings:
+      path: '@webroot/pdfs'
+    sortOrder: 2
+    type: craft\volumes\Local
+    url: '@web'
+  6cd5f724-b88e-4084-8f92-e00cc7dea583:
+    handle: drinks
+    hasUrls: true
+    name: Drinks
+    settings:
+      path: /Users/ryan/training/craftycoffee/web/images/drinks
+    sortOrder: '1'
+    type: craft\volumes\Local
+    url: //craftycoffee.dev/images/drinks
