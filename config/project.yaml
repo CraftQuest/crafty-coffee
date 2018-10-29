@@ -28,7 +28,7 @@ categoryGroups:
     structure:
       maxLevels: '2'
       uid: fa651328-1651-4c7a-8d60-c5a9a47b80ba
-dateModified: 1540821808
+dateModified: 1540823095
 email:
   fromEmail: ryan@mijingo.com
   fromName: 'Crafty Coffee'
@@ -782,14 +782,14 @@ sites:
     siteGroup: c2683e88-e6c3-4580-a96c-332a8a3f827d
     sortOrder: '2'
   d5f09a60-cd1b-4e3c-811b-43fa6d152dc7:
-    baseUrl: 'https://craftycoffee.craftscreencasts.com'
+    baseUrl: '@web'
     handle: default
-    hasUrls: '1'
+    hasUrls: true
     language: en-US
     name: 'Crafty Coffee'
-    primary: '1'
+    primary: true
     siteGroup: 9c2158cd-e7b9-42da-b2dc-57bbfeee3c07
-    sortOrder: '1'
+    sortOrder: 1
 system:
   edition: solo
   live: true
@@ -814,10 +814,10 @@ volumes:
     url: '@web'
   6cd5f724-b88e-4084-8f92-e00cc7dea583:
     handle: drinks
-    hasUrls: '1'
+    hasUrls: true
     name: Drinks
     settings:
-      path: /Users/ryan/training/up-and-running-with-craft/craftycoffee/web/images/drinks
+      path: /Users/ryan/training/craftycoffee/web/images/drinks
     sortOrder: '1'
     type: craft\volumes\Local
     url: //craftycoffee.dev/images/drinks
