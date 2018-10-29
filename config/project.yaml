@@ -28,7 +28,7 @@ categoryGroups:
     structure:
       maxLevels: '2'
       uid: fa651328-1651-4c7a-8d60-c5a9a47b80ba
-dateModified: 1540823095
+dateModified: 1540826013
 email:
   fromEmail: ryan@mijingo.com
   fromName: 'Crafty Coffee'
@@ -40,6 +40,8 @@ fieldGroups:
     name: Drinks
   420b4f9d-733a-47e6-9031-bbdfb7754c81:
     name: Recipes
+  6bfe147f-c912-48b6-8bfb-2ed0fe09f395:
+    name: Blog
   af356800-143a-4d5b-a0e7-811a7f167bd0:
     name: Globals
   b4532ef1-5542-49bb-8d2a-984a68900f6d:
@@ -334,6 +336,21 @@ fields:
     translationKeyFormat: null
     translationMethod: site
     type: craft\fields\PlainText
+  b49d3ee5-ba7f-4e3f-a303-8bad78648ff5:
+    contentColumnType: text
+    context: global
+    fieldGroup: 6bfe147f-c912-48b6-8bfb-2ed0fe09f395
+    handle: blogBody
+    instructions: ''
+    name: 'Blog Body'
+    searchable: true
+    settings:
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
   c4f0305b-df23-4920-b0c8-2105ec5bbda1:
     contentColumnType: text
     context: 'matrixBlockType:3af181f7-70c2-473a-8753-d016f18682f7'
@@ -586,6 +603,36 @@ sections:
         template: index.twig
         uriFormat: /
     type: single
+  53ddbf9a-99b1-49ea-8c45-ec82f683694e:
+    enableVersioning: true
+    entryTypes:
+      da561aac-0c08-413b-af98-5ae93fed0eca:
+        handle: blog
+        hasTitleField: true
+        name: Blog
+        sortOrder: 1
+        titleFormat: null
+        titleLabel: Title
+    handle: blog
+    name: Blog
+    propagateEntries: true
+    siteSettings:
+      0cb94306-5f6d-4c44-a78e-65ce0703913c:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: 'blog/{slug}'
+      ab30b810-b780-42f5-8619-f00e67c4c762:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: 'blog/{slug}'
+      d5f09a60-cd1b-4e3c-811b-43fa6d152dc7:
+        enabledByDefault: true
+        hasUrls: true
+        template: ''
+        uriFormat: 'blog/{slug}'
+    type: channel
   5fc2aad1-c7b2-4080-a631-c1bbcd9f800e:
     enableVersioning: '1'
     entryTypes:
