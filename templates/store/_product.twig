@@ -1,0 +1,63 @@
+{# This is the Store Product View template #}
+{% extends "_layouts/main" %}
+{% block main %}
+    <div class="full-bleed-header"
+         style="background-size: 100%; height: 200px; background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(/images/coffee-shop.jpg); background-repeat: no-repeat, repeat;">
+        <div class="page-title text-center">
+            <h2 class="logo"><span class="scripty">Crafty Supplies</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="intro large-12 small-12 columns ">
+            <p>
+                <small><a href="/store">&larr;Supplies</a></small>
+            </p>
+        </div>
+        {% set variant = product.defaultVariant %}
+        <div class="large-6 small-12 columns">
+            <img src="{{ product.productImage.one().getUrl('productListing') }}" alt="{{ product.name }}"/>
+        </div>
+        <div class="large-6 small-12 columns">
+            <h3>{{ product.title }}</h3>
+            <p>{% if variant.stock > 0 %}<span class="success label">In Stock</span>{% else %}<span class="alert label">Out of Stock</span>{% endif %}
+            </p>
+            <h4>
+                {% if variant.onSale %}
+                    <strike>{{ variant.price | currency('USD') }}</strike> {{ variant.salePrice | currency('USD') }}
+                {% else %}
+                    {{ variant.price | currency('USD') }}
+                {% endif %}
+            </h4>
+            <p>SKU: {{ variant.sku }}</p>
+            <form method="POST">
+                <input type="hidden" name="action" value="commerce/cart/update-cart">
+                <input type="hidden" name="cartUpdatedNotice" value="Added {{ product.title }} to the cart.">
+                {{ redirectInput('store/cart') }}
+                {{ csrfInput() }}
+                <input type="hidden" name="qty" value="1">
+                <input type="hidden" name="purchasableId" value="{{ variant.id }}">
+                <input class="button radius" type="submit" value="Add to cart">
+            </form>
+        </div>
+        <div class="large-12 small-12 columns">
+            <div class="row">
+                <div class="product-description">
+                    {% for block in product.productDescription.all() %}
+                        {% switch block.type %}
+                        {% case 'descriptionCopy' %}
+                            {{ block.text }}
+                        {% case 'descriptionImage' %}
+                            <div class="photo-inset">
+                                <img src="{{ block.image.one().url() }}" alt="{{ block.caption }}"/>
+                                <p class="caption">
+                                    <small>{{ block.caption }}</small>
+                                </p>
+                            </div>
+                        {% endswitch %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,102 @@
+{% extends "_layouts/main" %}
+{% set cart = craft.commerce.carts.cart %}
+{% block main %}
+    <div class="full-bleed-header"
+         style="background-size: 100%; height: 200px; background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(/images/coffee-shop.jpg); background-repeat: no-repeat, repeat;">
+        <div class="page-title text-center">
+            <h2 class="logo"><span class="scripty">Crafty Supplies</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="intro large-12 small-12 columns ">
+            <p><a href="">Your Cart (or Basket)</a></p>
+        </div>
+        <div class="small-12 large-12 columns">
+            {% if cart.lineItems | length %}
+                <table style="width:100%;">
+                    <thead>
+                    <tr>
+                        <th>Remove</th>
+                        <th>Product</th>
+                        <th>Qty</th>
+                        <th class="text-right">Price</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in cart.lineItems %}
+                        <form method="post">
+                            <input type="hidden" name="action" value="commerce/cart/update-cart">
+                            <input type="hidden" name="cartUpdatedNotice" value="Updated line items.">
+                            {{ redirectInput('store/cart') }}
+                            {{ csrfInput() }}
+                        <tr>
+                            <td style="width:5%;">
+                                <input type="checkbox" name="lineItems[{{ item.id }}][remove]" value="1">
+                            </td>
+                            <td>
+                                <strong>{{ item.description }}</strong><br>
+                                {{ item.sku }}
+                                <br>
+                                <br>
+                            </td>
+                            <td style="width:10%;">
+                                        <input type="hidden" name="lineItems[{{ item.id }}][id]" value="{{ item.id }}">
+                                        <input type="number" name="lineItems[{{ item.id }}][qty]" min="1" value="{{ item.qty }}">
+                            </td>
+                            <td style="width:25%;" class="text-right">
+                                {{ item.price | currency(cart.currency) }}/ea<br>
+                                Subtotal: {{ item.subtotal | currency(cart.currency) }}
+                            </td>
+                        </tr>
+
+
+                    {% endfor %}
+                    <input type="submit" class="button tiny secondary radius" value="Update">
+                        </form>
+
+                    {% for adjustment in cart.adjustments %}
+                        <tr>
+                            <td></td>
+                            <td>{{ adjustment.type | upper }}
+                                <strong>{{ adjustment.name }}</strong>
+                                {{ adjustment.description }}
+                            </td>
+                            <td></td>
+                            <td class="text-right">-{{ adjustment.amount | currency(cart.currency) }}</td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <td></td>
+
+                        <td>
+                            <form method="POST">
+                                <input type="hidden" name="action" value="commerce/cart/update-cart">
+                                {{ redirectInput('store/cart') }}
+                                {{ csrfInput() }}
+                                <input type="text"
+                                       name="couponCode"
+                                       class="{% if cart.getFirstError('couponCode') %}has-error{% endif %}"
+                                       value="{{ cart.couponCode }}"
+                                       placeholder="{{ "Coupon Code"|t }}">
+                                <input type="submit" class="button tiny secondary radius" value="{% if cart.couponCode %}Change{% else %}Apply{% endif %} Coupon"/>
+                            </form>
+                        </td>
+                        <td>
+                        </td>
+                        <td class="text-right">
+                            Total Discount: {{ cart.totalDiscount | currency(cart.currency) }}<br>
+                            Total Shipping: {{ cart.totalShippingCost | currency(cart.currency) }}<br>
+                            Total Tax: {{ cart.totalTax | currency(cart.currency) }}<br>
+                            <h4>Total: {{ cart.totalPrice | currency(cart.currency) }}</h4>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <a class="button medium secondary radius" href="{{ url('/store') }}">Continue Shopping</a>
+                <a class="button medium primary radius" href="{{ url('store/checkout') }}">Checkout</a>
+            {% else %}
+                <p>You have no items in the cart. <a href="/store">Add some and get brewing!</a></p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends '_layouts/main' %}
+{% set number = craft.app.request.param('number') %}
+{% set order = craft.orders().number(number).one() %}
+{% if not order %}
+    {% redirect 'store/customer' %}
+{% endif %}
+{% block main %}
+    <div class="row">
+        <div class="intro large-12 small-12 columns">
+            <p>Order  #{{ order.id }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 small-12 columns">
+            <h1>Your Order is Complete</h1>
+            <div class="row">
+                <div class="large-4 small-12 columns">
+                    <h4>Details</h4>
+                    <strong>Customer:</strong> {{ order.customer.email }}<br>
+                    <strong>Total:</strong> {{ order.totalPrice | currency(order.currency) }}<br>
+                    <strong>Date:</strong> {{ order.dateOrdered | date }}
+                </div>
+                <div class="large-4 columns">
+                    <h4>Shipping Address</h4>
+                    {{ order.shippingAddress.firstName }} {{ order.shippingAddress.lastName }}<br>
+                    {{ order.shippingAddress.address1 }}<br>
+                    {% if shippingAddress.address2 is defined %}{{ order.shippingAddress.address2 }}<br>{% endif %}
+                    {{ order.shippingAddress.city }}<br>
+                    {% if order.shippingAddress.state is defined %}{{ order.shippingAddress.state }}<br>{% endif %}
+                    {{ order.shippingAddress.zipCode }}
+                    {{ order.shippingAddress.country }}
+
+                </div>
+                <div class="large-4 columns">
+                    <h4>Billing Address</h4>
+                    {{ order.billingAddress.firstName }} {{ order.billingAddress.lastName }}<br>
+                    {{ order.billingAddress.address1 }}<br>
+                    {% if billingAddress.address2 is defined %}{{ order.billingAddress.address2 }}<br>{% endif %}
+                    {{ order.billingAddress.city }}<br>
+                    {% if order.billingAddress.state is defined %}{{ order.billingAddress.state }}<br>{% endif %}
+                    {{ order.billingAddress.zipCode }}
+                    {{ order.billingAddress.country }}
+                </div>
+            </div>
+            {% if order.pdfUrl %}
+                <h4>Receipt (<a href="{{ order.getPdfUrl('receipt') }}">Download</a>)</h4>
+            {% endif %}
+            <table class="large-12 columns">
+                <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Unit Price</th>
+                    <th>Quantity</th>
+                    <th class="text-right">Total</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in order.lineItems %}
+                    <tr>
+                        <td>
+                            <strong>{{ item.description }}</strong><br>
+                            SKU: {{ item.sku }}
+                        </td>
+                        <td>
+                            {% if item.onSale %}
+                                <strike>{{ item.price|currency(order.currency) }}</strike>   {{ item.salePrice|currency(order.currency) }}
+                            {% else %}
+                                {{ item.price|currency(order.currency) }}
+                            {% endif %}
+                        </td>
+                        <td>{{ item.qty }}</td>
+                        <td class="text-right">{{ item.total|currency(order.currency) }}</td>
+                    </tr>
+                {% endfor %}
+
+                {% for adjustment in order.adjustments %}
+                    <tr>
+                        <td>{{ adjustment.type }}</td>
+                        <td colspan="2"><strong>{{ adjustment.name }}</strong><br>({{ adjustment.description }})</td>
+                        <td class="text-right">{{ adjustment.amount|currency(order.currency) }}</td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="4" class="text-right">
+                        Item Total: {{ order.itemTotal|currency(order.currency) }}<br>
+                        {% if order.storedTotalDiscount > 0 %}Base Discount: {{ order.storedTotalDiscount|currency(order.currency) }}<br>{% endif %}
+                        {% if order.storedTotalShippingCost > 0 %}Base Shipping Cost: {{ order.storedTotalShippingCost|currency(order.currency) }}<br>{% endif %}
+                        <h4>Total: {{ order.storedTotalPrice|currency(order.currency) }}</h4>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
