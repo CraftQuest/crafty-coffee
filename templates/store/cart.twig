@@ -62,7 +62,7 @@
                                 {{ adjustment.description }}
                             </td>
                             <td></td>
-                            <td class="text-right">-{{ adjustment.amount | currency(cart.currency) }}</td>
+                            <td class="text-right">{{ adjustment.amount | currency(cart.currency) }}</td>
                         </tr>
                     {% endfor %}
                     <tr>
