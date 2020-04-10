@@ -5,3 +5,8 @@ This site was built in _Up and Running with Craft_ by Ryan Irelan.
 To learn more: https://craftquest.io/courses/craft-cms-3-tutorials
 
 ![Crafty Coffee Screenshot]([https://gitlab.com/craft-cms-training/crafty-coffee-cms/-/raw/2020/web/images/crafty-coffee-screenshot.png)
+
+### Accessing the Craft control panel
+
+* Go to: yourlocalhostname/roaster
+* username is admin, password is password
