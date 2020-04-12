@@ -2,11 +2,18 @@
   "require": {
     "am-impact/amcommand": "^3.1",
     "craftcms/cms": "3.4.10.1",
+<<<<<<< HEAD
     "craftcms/commerce": "^3.0",
     "craftcms/commerce-stripe": "2.2.3",
     "craftcms/feed-me": "4.2.0.1",
     "craftcms/redactor": "2.5.0",
     "nystudio107/craft-seomatic": "3.2.41",
+=======
+    "craftcms/commerce": "3.0.12",
+    "craftcms/feed-me": "4.2.1.1",
+    "craftcms/redactor": "2.6.1",
+    "nystudio107/craft-seomatic": "3.2.48",
+>>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
     "vlucas/phpdotenv": "^3.4.0"
   },
   "autoload": {

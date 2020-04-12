@@ -2,7 +2,10 @@
 
 {% if not currentUser %} {% redirect 'login' %} {% endif %}
 {% block main %}
+<<<<<<< HEAD
 
+=======
+>>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
     <div class="row">
         <div class="intro large-12 small-12 columns">
             <p>Your Past Orders</p>
@@ -26,17 +29,32 @@
                     <td><a href="{{ url('store/customer/order', { number: order.number }) }}">Order #{{ order.id }}</a></td>
                     <td>{{ order.dateOrdered | date }}</td>
                     <td>{{ order.totalQty }} item{% if order.totalQty > 1 %}s{% endif %}</td>
+<<<<<<< HEAD
                     <td>{{ order.totalPrice | currency(order.currency) }}</td>
                     <td><span style="color:{{ order.orderStatus.color }}">{{ order.orderStatus }}</span></td>
+=======
+                    <td>{{ order.totalPrice|currency(order.currency) }}</td>
+                    <td><span style="color: {{ order.orderStatus.color }}">{{ order.orderStatus }}</span></td>
+>>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                 </tr>
             {% endfor %}
             </tbody>
         </table>
     </div>
     <div class="row">
+<<<<<<< HEAD
         {% set cartItems = craft.commerce.carts.cart %}
         {% if cartItems.hasLineItems() %}
             <a href="/store/cart" class="button medium secondary">Finish Your Current Order</a>
         {% endif %}
     </div>
 {% endblock %}
+=======
+            {% set cartItems = craft.commerce.carts.cart %}
+            {% if cartItems.hasLineItems() %}
+                <a href="/store/cart" class="button medium secondary">Finish Your Current Order</a>
+            {% endif %}
+    </div>
+    </div>
+{% endblock %}
+>>>>>>> eabdac7572f763628aee79796d42e569640f5dfe

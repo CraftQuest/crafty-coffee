@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 {% extends "_layouts/main" %}
+=======
+{% extends '_layouts/main' %}
+>>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
 {% set cart = craft.commerce.carts.cart %}
 {% block main %}
     {% set currentYear = date().format('Y') %}
@@ -10,11 +14,17 @@
     <div class="row">
         <div class="large-12 columns">
             <h3>Payment</h3>
+<<<<<<< HEAD
             <div class="alert error"
                  role="alert">{{ craft.app.session.getFlash('error') }}</div>
             <form method="POST">
                 <input type="hidden" name="action"
                        value="commerce/payments/pay"/>
+=======
+            <div class="alert error" role="alert">{{ craft.app.session.getFlash('error') }}</div>
+            <form method="POST">
+                <input type="hidden" name="action" value="commerce/payments/pay"/>
+>>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                 {{ redirectInput('/store/customer/order?number={number}') }}
                 <input type="hidden" name="paymentMethodId" value="1"/>
                 {{ csrfInput() }}
@@ -46,10 +56,15 @@
                                            value="{{ formValues.lastName }}">
                                 </div>
                             </div>
+<<<<<<< HEAD
                             {% if paymentForm is defined and paymentForm.hasErrors('firstName') %}
                                 <span class="error">{{ paymentForm.getError('firstName') }}</span>{% endif %}
                             {% if paymentForm is defined and paymentForm.hasErrors('lastName') %}
                                 <span class="error">{{ paymentForm.getError('lastName') }}</span>{% endif %}
+=======
+                            {% if paymentForm is defined and paymentForm.hasErrors('firstName') %}<span class="error">{{ paymentForm.getError('firstName') }}</span>{% endif %}
+                            {% if paymentForm is defined and paymentForm.hasErrors('lastName') %}<span class="error">{{ paymentForm.getError('lastName') }}</span>{% endif %}
+>>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                         </div>
                         <div class="form-group">
                             <label>Card Number</label>
@@ -58,24 +73,36 @@
                                    placeholder="Card Number"
                                    class="card-number u-full-width"
                                    value="{{ formValues.number }}">
+<<<<<<< HEAD
                             {% if paymentForm is defined and paymentForm.hasErrors('number') %}
                                 <span class="error">{{ paymentForm.getError('number') }}</span>{% endif %}
+=======
+                            {% if paymentForm is defined and paymentForm.hasErrors('number') %}<span class="error">{{ paymentForm.getError('number') }}</span>{% endif %}
+>>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                         </div>
                         <label>Card Expiry Date</label>
                         <div class="row form-group">
                             <div class="large-6 small-12 columns">
                                 <select name="month">
                                     {% for month in 1..12 %}
+<<<<<<< HEAD
                                         <option value="{{ month }}"
                                                 {% if formValues.month == month %}selected{% endif %}>{{ month }}</option>
+=======
+                                        <option value="{{ month }}" {% if formValues.month == month %}selected{% endif %}>{{ month }}</option>
+>>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                                     {% endfor %}
                                 </select>
                             </div>
                             <div class="large-6 small-12 columns">
                                 <select name="year">
                                     {% for year in currentYear..(currentYear + 12) %}
+<<<<<<< HEAD
                                         <option value="{{ year }}"
                                                 {% if formValues.year == year %}selected{% endif %}>{{ year }}</option>
+=======
+                                        <option value="{{ year }}" {% if formValues.year == year %}selected{% endif %}>{{ year }}</option>
+>>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                                     {% endfor %}
                                 </select>
                             </div>
@@ -87,6 +114,7 @@
                                        placeholder="CVV" maxlength="4"
                                        class="card-cvc"
                                        value="{{ formValues.cvv }}">
+<<<<<<< HEAD
                                 {% if paymentForm is defined and paymentForm.hasErrors('cvv') %}
                                     <span class="error">{{ paymentForm.getError('cvv') }}</span>{% endif %}
                             </div>
@@ -94,20 +122,34 @@
                         <button class="button button-primary radius"
                                 type="submit">Complete Order
                         </button>
+=======
+                                {% if paymentForm is defined and paymentForm.hasErrors('cvv') %}<span class="error">{{ paymentForm.getError('cvv') }}</span>{% endif %}
+                            </div>
+                        </div>
+                        <button class="button button-primary radius" type="submit">Complete Order</button>
+>>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                     </div>
                     <div class="large-6 small-12 columns">
                         <div class="review-card">
                             <h5 class="text-center">Order Review</h5>
+<<<<<<< HEAD
                             <strong>Items
                                 total: </strong> {{ cart.itemTotal|currency(cart.currency) }}
                             <br>
+=======
+                            <strong>Items total: </strong> {{ cart.itemTotal|currency(cart.currency) }}<br>
+>>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                             {% for adjustment in cart.adjustments %}
                                 <strong>{{ adjustment.name }}</strong> {{ adjustment.amount|currency(cart.currency) }}
                                 {% if adjustment.description %}({{ adjustment.description }}){% endif %}
                             {% endfor %}
+<<<<<<< HEAD
                             <p>
                                 <strong>Total:</strong> {{ cart.totalPrice|currency(cart.currency) }}
                             </p>
+=======
+                            <p><strong>Total:</strong> {{ cart.totalPrice|currency(cart.currency) }}</p>
+>>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                         </div>
                     </div>
                 </fieldset>
@@ -115,5 +157,9 @@
         </div>
     </div>
     </div>
+<<<<<<< HEAD
 
 {% endblock %}
+=======
+{% endblock %}
+>>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
