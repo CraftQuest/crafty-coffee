@@ -1,0 +1,28 @@
+{% extends '_layouts/main' %}
+{% set cart = craft.commerce.carts.cart %}
+{% block main %}
+    <div class="row">
+        <div class="intro large-12 small-12 columns">
+            <p>Checkout - 2 of 3</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <h4>Shipping Method</h4>
+            <form method="post">
+                <input type="hidden" name="action" value="commerce/cart/update-cart">
+                {{ redirectInput('store/checkout/payment') }}
+                {{ csrfInput() }}
+                {% for handle, method in cart.availableShippingMethods %}
+                    <div class="shipping-options">
+                        <label>
+                            <input type="radio" name="shippingMethod" value="{{ handle }}"} />
+                            <strong>{{ method.name }}</strong>
+                            <span class="price">{{ method.priceForOrder(cart) | currency(cart.currency) }}
+                        </span>
+                        </label>
+                    </div>
+                {% endfor %}
+                <p><input type="submit" class="button primary small radius" value="Select Shipping"/></p>
+            </form>
+{% endblock %}

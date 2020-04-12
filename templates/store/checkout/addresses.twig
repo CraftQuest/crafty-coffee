@@ -1,0 +1,169 @@
+{% extends "_layouts/main" %}
+{% block main %}
+    {% set countries = craft.commerce.countries.allEnabledCountriesAsList %}
+    {% set states = craft.commerce.states.allEnabledStates %}
+    <form method="post">
+        <input type="hidden" name="action" value="commerce/cart/update-cart">
+        {{ redirectInput('store/checkout/shipping') }}
+        {{ csrfInput() }}
+        <div class="row">
+            <div class="intro large-12 small-12 columns">
+                <p>Checkout - 1 of 3</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-6 small-12 columns">
+                <h4>Shipping Address</h4>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <label for="shippingAddress-firstName">First Name
+                            *</label>
+                        <input type="text" id="shippingAddress-firstName"
+                               class="u-full-width"
+                               name="shippingAddress[firstName]" value="">
+                    </div>
+                    <div class="large-6 columns">
+                        <label for="shippingAddress-lastName">Last Name
+                            *</label>
+                        <input type="text" id="shippingAddress-lastName"
+                               class="u-full-width"
+                               name="shippingAddress[lastName]" value="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <label for="shippingAddress-address1">Address 1</label>
+                        <input type="text" id="shippingAddress-address1"
+                               class="u-full-width"
+                               name="shippingAddress[address1]" value="">
+                    </div>
+                    <div class="large-6 columns">
+                        <label for="shippingAddress-address2">Address 2</label>
+                        <input type="text" id="shippingAddress-address2"
+                               class="u-full-width"
+                               name="shippingAddress[address2]" value="">
+                    </div>
+                    <div class="large-6 columns">
+                        <label for="shippingAddress-city">City</label>
+                        <input type="text" id="shippingAddress-city"
+                               class="u-full-width" name="shippingAddress[city]"
+                               value="">
+                    </div>
+                    <div class="large-6 columns">
+                        <label for="shippingAddress-zipCode">Zip Code</label>
+                        <input type="text" id="shippingAddress-zipCode"
+                               class="u-full-width"
+                               name="shippingAddress[zipCode]" value="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <label for="shippingAddress-phone">Phone</label>
+                        <input type="text" id="shippingAddress-phone"
+                               class="u-full-width"
+                               name="shippingAddress[phone]" value="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <label for="shippingAddress-countryId">Country *</label>
+                        <select class="address-country u-full-width"
+                                name="shippingAddress[countryId]">
+                            <option value=""></option>
+                            {% for key, option in countries %}
+                                <option value="{{ key }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="large-6 columns">
+                        <label for="shippingAddress-state">State</label>
+                        <select>
+                            <option value=""></option>
+                            {% for stateId, stateName in states %}
+                                <option value="{{ stateId }}">{{ stateName }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="large-6 small-12 columns">
+                <h4>Billing Address</h4>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <label for="billingAddress-firstName">First Name
+                            *</label>
+                        <input type="text" id="billingAddress-firstName"
+                               class="u-full-width"
+                               name="billingAddress[firstName]" value="">
+                    </div>
+                    <div class="large-6 columns">
+                        <label for="billingAddress-lastName">Last Name *</label>
+                        <input type="text" id="billingAddress-lastName"
+                               class="u-full-width"
+                               name="billingAddress[lastName]" value="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <label for="billingAddress-address1">Address 1</label>
+                        <input type="text" id="billingAddress-address1"
+                               class="u-full-width"
+                               name="billingAddress[address1]" value="">
+                    </div>
+
+                    <div class="large-6 columns">
+                        <label for="billingAddress-address2">Address 2</label>
+                        <input type="text" id="billingAddress-address2"
+                               class="u-full-width"
+                               name="billingAddress[address2]" value="">
+                    </div>
+
+                    <div class="large-6 columns">
+                        <label for="billingAddress-city">City</label>
+                        <input type="text" id="billingAddress-city"
+                               class="u-full-width" name="billingAddress[city]"
+                               value="">
+                    </div>
+
+                    <div class="large-6 columns">
+                        <label for="shippingAddress-zipCode">Zip Code</label>
+                        <input type="text" id="shippingAddress-zipCode"
+                               class="u-full-width"
+                               name="shippingAddress[zipCode]" value="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <label for="billingAddress-phone">Phone</label>
+                        <input type="text" id="billingAddress-phone"
+                               class="u-full-width" name="billingAddress[phone]"
+                               value="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <label for="billingAddress-countryId">Country *</label>
+                        <select class="address-country u-full-width"
+                                name="billingAddress[countryId]">
+                            <option value=""></option>
+                            {% for key, option in countries %}
+                                <option value="{{ key }}">{{ option }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="large-6 columns">
+                        <label for="billingAddress-state">State</label>
+                        <select>
+                            <option value=""></option>
+                            {% for stateId, stateName in states %}
+                                <option value="{{ stateId }}">{{ stateName }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" class="button button-primary"
+                   value="Save Addresses">
+    </form>
+    </div>
+{% endblock %}
