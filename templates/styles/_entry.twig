@@ -1,0 +1,53 @@
+{% extends "_layouts/main" %}
+
+{% block main %}
+
+    <ul class="breadcrumbs">
+        <li><a href="../">Home</a></li>
+        <li>Drink Styles</li>
+        <li>{{ category.title }}</li>
+    </ul>
+    <div class="full-bleed-header" style="background-size: 100%; height: 200px; background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(/images/drinks/espresso-shot.jpg); background-repeat: no-repeat, repeat;">
+        <div class="page-title text-center">
+            <h2 class="logo"><span class="scripty">{{ category.title }}</h2>
+            <p class="tagline reverse">{{ category.styleDescription }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="intro large-12 small-12 columns text-center">
+            <p>Do you like our styles?</p>
+        </div>
+
+        {# Drinks Entries #}
+        <div class="large-12 small-12 columns">
+            <table width="100%">
+                <tr>
+                    <th>Drink Name</th>
+                    <th>Added to Menu</th>
+                </tr>
+                {% for drink in craft.entries.section('drinks').relatedTo(category).all() %}
+                <tr>
+
+                    <td><a href="{{ drink.url }}">{{ drink.title }}</a></td>
+                    <td>{{ drink.entryDate | date('M Y') }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {# Recipes Entries #}
+            <table width="100%">
+                <tr>
+                    <th>Recipe Name</th>
+                    <th>Added to Site</th>
+                </tr>
+                {% for recipe in craft.entries.section('recipes').relatedTo(category).all() %}
+                <tr>
+
+                    <td><a href="{{ recipe.url }}">{{ recipe.title }}</a></td>
+                    <td>{{ recipe.entryDate | date('M Y') }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

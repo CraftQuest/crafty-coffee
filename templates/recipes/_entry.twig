@@ -1,55 +1,54 @@
-{% extends '_layouts/main' %}
+{% extends "_layouts/main" %}
 
 {% block main %}
 
-<ul class="breadcrumbs">
-    <li><a href="/recipes">Recipes</a></li>
-    <li>{{ entry.title }}</li>
-</ul>
-<div class="full-bleed-header" style="background-size: 100%; height: 300px; background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url({{ entry.drinkImage.one().getUrl() }}); background-repeat: no-repeat, repeat;">
-    <div class="page-title text-center">
-        <h2 class="logo"><span class="scripty">{{ entry.title }}</h2>
-        <p class="tagline reverse">Espresso</p>
+    <ul class="breadcrumbs">
+        <li><a href="/recipes">Recipes</a></li>
+        <li>{{ entry.title }}</li>
+    </ul>
+    <div class="full-bleed-header" style="background-size: 100%; height: 300px; background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(/images/drinks/espresso-shot.jpg); background-repeat: no-repeat, repeat;">
+        <div class="page-title text-center">
+            <h2 class="logo"><span class="scripty">{{ entry.title }}</h2>
+            <p class="tagline reverse">Espresso</p>
+        </div>
     </div>
-</div>
-<div class="row">
-    <div class="intro large-12 small-12 columns text-center">
-        <p>{{ entry.pageIntro }}</p>
+    <div class="row">
+        <div class="intro large-12 small-12 columns text-center">
+            <p>The perfect shot of espresso. We've been perfecting it for years and now you can make it at home, too.</p>
+        </div>
     </div>
-</div>
-<div class="row">
+    <div class="row">
         <div class="panel radius snapshot large-12 small-12 columns">
             <h3>Recipe Snapshot</h3>
             <ul>
-            	{% for row in entry.recipeSnapshot %}
-                <li>{{ row.snapshotText }}</li>
-                {% endfor %}
+                <li>Difficulty: Moderate</li>
+                <li>Time Required: 10 minutes</li>
+                <li>Cost: varies</li>
+                <li>Yield: one double shot</li>
             </ul>
-        </div>
-        {% for block in entry.recipeContents %}
-        {# image block #}
-		{% switch block.type %}
-		{% case 'recipeImage' %}
-		{% set image = block.image.one() %}
+        </div>          {% for block in entry.recipeContents %}
+        {% switch block.type %}
+        {% case 'recipeImage' %}
+            {% set image = block.image.one() %}
+        {# recipeImage Block #}
         <div class="photo-inset full"> <!-- full, left, right -->
-            <img src="{{ image.getUrl() }}"
+            <img src="{{ image.url() }}"
                  alt=""/>
-			{% if block.imageCaption %}
+            {% if block.imageCaption %}
             <p class="caption">
                 <small>{{ block.imageCaption }}</small>
             </p>
             {% endif %}
         </div>
+        {# End recipeImage Block #}
 
-		{# end image block #}
+        {% case 'recipeCopy' %}
+        {# recipeCopy Block #}
+            {{ block.bodyContent }}
+        {# End recipeCopy Block #}
 
-        {# start body copy #}
-		{% case 'recipeCopy' %}
-		{{ block.bodyContent }}
-        {# end body copy #}
-
-		{% case 'recipeIngredients' %}
-			
+        {% case 'recipeIngredients' %}
+        {# recipeIngredients Block #}
         <table width="100%">
             <tr>
                 <th width="20%">Amount</th>
@@ -62,25 +61,31 @@
             </tr>
             {% endfor %}
         </table>
-		
-		{% case "recipeSteps" %}
-			
+        {# End recipeIngredients Block #}
+
+        {% case 'recipeSteps' %}
+        {# recipeSteps Block #}
         <div class="steps">
             <h3>{{ block.stepsTitle }}</h3>
             <ol>
-            	{% for step in block.stepsContent %}
-                <li>{{ step.stepsInstructions }}</li>
+                {% for step in block.stepsContent %}
+                <li>{{ step.stepInstructions }}</li>
                 {% endfor %}
             </ol>
         </div>
-		{% case "recipeTip" %}
-			
+        {# End recipeSteps Block #}
+
+        {% case 'recipeTip' %}
+        {# recipeTip Block #}
         <div class="panel tip">
             <p>{{ block.tipContent }}</p>
         </div>
-         {% endswitch %}
+        {# End recipeTip Block #}
+        {% endswitch %}
         {% endfor %}
+
     </div>
-</div>
+    </div>
+
 
 {% endblock %}

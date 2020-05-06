@@ -1,9 +1,8 @@
-{% extends '_layouts/main' %}
+{% extends "_layouts/main" %}
 
 {% block main %}
-
 <ul class="breadcrumbs">
-    <li><a href="../">Home</a></li>
+    <li><a href="/">Home</a></li>
     <li><a href="/news">News</a></li>
     <li>{{ entry.title }}</li>
 </ul>
@@ -16,7 +15,7 @@
 <div class="row">
     <div class="large-12 small-12 columns">
         <div class="intro large-12 small-12 columns text-center">
-            <p>{{ entry.newsExcerpt }}</p>
+            <p>{{ entry.excerpt }}</p>
         </div>
 
         <h1>{{ entry.title }}</h1>
@@ -24,5 +23,4 @@
         {{ entry.newsBody }}
     </div>
 </div>
-
 {% endblock %}

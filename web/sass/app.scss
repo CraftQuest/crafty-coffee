@@ -1,0 +1,196 @@
+@import "settings";
+@import "foundation";
+
+body {
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Merriweather Sans', sans-serif;
+  margin-top:0;
+}
+
+table {
+  th {
+    text-transform: uppercase;
+    background-color:$gainsboro;
+  }
+  
+}
+
+ul.breadcrumbs {
+  margin-bottom: 0;
+  background-color: #2c2c10;
+  border:none;
+  border-radius: 0;
+
+  li, li a {
+    color: $white;
+  }
+}
+
+.full-bleed-header {
+  padding-top:1%;
+}
+
+.page-title {
+  // margin-top:1.5em;
+}
+
+.fa-beer {
+  color:$white;
+}
+
+.top-bar {
+  background-color:$black;
+
+  h1 {
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: $white;
+  }
+}
+
+.logo {
+  font-size:50px;
+  text-transform:uppercase;
+  color:#fff;
+
+}
+  .scripty {
+  text-transform: none;
+  font: 400 1.5em/1.5 'Pacifico', Helvetica, sans-serif;
+  //text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 7px 7px 0px rgba(0,0,0,0.05);
+  }
+
+.tagline {
+  font-size: 1.1em;
+  }
+
+.reverse {
+    color: #fff;
+}
+
+section.top-bar-section {
+  background-color:$black;
+}
+
+.page-content {
+  margin-top:2em;
+}
+
+.intro p {
+  font-size: 1.5em;
+  font-style: italic;
+  margin-top:2em;
+}
+
+/*
+*
+* Recipe Modules 
+*
+**/
+
+.steps {
+  border-top: 1px solid #ccc;
+  margin-top: 3em;
+  padding-top:2em;
+}
+.footer {
+  p {
+    font-size:0.8em;
+  }
+  margin-top:2em;
+  padding-top: 1em;
+  border-top:1px solid $gainsboro;
+}
+
+
+/**
+*
+* News Section
+*
+*/
+
+.news-item {
+  border-top: 1px solid #eee;
+  padding-top: 2em;
+  margin-top: 2em;
+}
+
+.first {
+  border: none;
+  margin-top:2em;
+}
+
+ul.news-listing {
+  list-style-type: none;
+  margin-left:0;
+  padding-left:0.1em;;
+
+  li {
+    margin-bottom: 1em;
+    border-bottom: 1px solid $smoke;
+    padding-bottom:0.5em;
+  }
+
+  a {
+    color: $oil;
+  }
+
+  a:hover {
+    text-decoration:underline;
+  }
+}
+
+.hp-brew-item {
+  background-size: cover;
+  height: 200px;
+  margin-bottom:2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+    p {
+      font-size:1.5em;
+    }
+}
+
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switches",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
