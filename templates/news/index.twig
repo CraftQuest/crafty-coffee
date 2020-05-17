@@ -1,6 +1,39 @@
-{% extends "_layouts/main" %}
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Crafty Coffee</title>
+    <link rel="stylesheet" href="/bower_components/foundation/css/foundation.css"/>
+    <link rel="stylesheet" href="/stylesheets/app.css"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700|Fauna+One|Pacifico|Merriweather+Sans:400,700' rel='stylesheet'
+          type='text/css'>
 
-{% block main %}
+</head>
+<body>
+<nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+        <li class="name">
+            <h1><a href="/"><span class="scripty">Crafty</span></a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon">
+            <a href="#"><span>Menu</span></a>
+        </li>
+    </ul>
+    <section class="top-bar-section">
+        <ul class="right">
+            <li><a href="#">About Crafty Coffee</a></li>
+            <li>
+                <a href="#">Our Signature Drinks</a>
+            </li>
+            <li>
+                <a href="#">Our Recipes</a>
+            </li>
+        </ul>
+    </section>
+</nav>
 
     <ul class="breadcrumbs">
         <li><a href="../">Home</a></li>
@@ -12,14 +45,50 @@
             <p class="tagline reverse">Coffee news from the shop and beyond.</p>
         </div>
     </div>
-    {% for item in craft.entries.section('news').limit(25).all() %}
     <div class="row news-item first">
         <div class="large-12 small-12 columns">
-            <h1><a href="{{ item.url }}">{{ item.title }}</a></h1>
-            <p class="byline">by {{ item.author }} on {{ item.postDate | date('M d, Y') }}</p>
-            {{ item.newsBody }}
+            <h1><a href="">News Article Title</a></h1>
+            <p class="byline">by Ryan Irelan on February 09, 2020</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur deleniti dignissimos est explicabo, iure laborum minima natus nihil qui repudiandae, velit voluptatum! Animi id illo illum in maiores velit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur deleniti dignissimos est explicabo, iure laborum minima natus nihil qui repudiandae, velit voluptatum! Animi id illo illum in maiores velit?</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur deleniti dignissimos est explicabo, iure laborum minima natus nihil qui repudiandae, velit voluptatum! Animi id illo illum in maiores velit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur deleniti dignissimos est explicabo, iure laborum minima natus nihil qui repudiandae, velit voluptatum! Animi id illo illum in maiores velit?</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur deleniti dignissimos est explicabo, iure laborum minima natus nihil qui repudiandae, velit voluptatum! Animi id illo illum in maiores velit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur deleniti dignissimos est explicabo, iure laborum minima natus nihil qui repudiandae, velit voluptatum! Animi id illo illum in maiores velit?</p>
         </div>
-        {% endfor %}
+    </div>
+    <div class="row news-item">
+        <div class="large-12 small-12 columns">
+            <h1><a href="">News Article Title</a></h1>
+            <p class="byline">by Ryan Irelan on February 09, 2020</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur deleniti dignissimos est explicabo, iure laborum minima natus nihil qui repudiandae, velit voluptatum! Animi id illo illum in maiores velit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur deleniti dignissimos est explicabo, iure laborum minima natus nihil qui repudiandae, velit voluptatum! Animi id illo illum in maiores velit?</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur deleniti dignissimos est explicabo, iure laborum minima natus nihil qui repudiandae, velit voluptatum! Animi id illo illum in maiores velit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur deleniti dignissimos est explicabo, iure laborum minima natus nihil qui repudiandae, velit voluptatum! Animi id illo illum in maiores velit?</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur deleniti dignissimos est explicabo, iure laborum minima natus nihil qui repudiandae, velit voluptatum! Animi id illo illum in maiores velit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur deleniti dignissimos est explicabo, iure laborum minima natus nihil qui repudiandae, velit voluptatum! Animi id illo illum in maiores velit?</p>
+        </div>
+    </div>
+    <div class="row news-item">
+        <div class="large-12 small-12 columns">
+            <h1><a href="">News Article Title</a></h1>
+            <p class="byline">by Ryan Irelan on February 09, 2020</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur deleniti dignissimos est explicabo, iure laborum minima natus nihil qui repudiandae, velit voluptatum! Animi id illo illum in maiores velit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur deleniti dignissimos est explicabo, iure laborum minima natus nihil qui repudiandae, velit voluptatum! Animi id illo illum in maiores velit?</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur deleniti dignissimos est explicabo, iure laborum minima natus nihil qui repudiandae, velit voluptatum! Animi id illo illum in maiores velit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur deleniti dignissimos est explicabo, iure laborum minima natus nihil qui repudiandae, velit voluptatum! Animi id illo illum in maiores velit?</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur deleniti dignissimos est explicabo, iure laborum minima natus nihil qui repudiandae, velit voluptatum! Animi id illo illum in maiores velit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur deleniti dignissimos est explicabo, iure laborum minima natus nihil qui repudiandae, velit voluptatum! Animi id illo illum in maiores velit?</p>
+        </div>
     </div>
 
-{% endblock %}
+    <div class="row">
+        <div class="footer">
+            <p>Copyright 2018 Crafty Coffee, Inc. All rights reserved. Enjoy the buzz! (Part of a <a href="https://mijingo.com/craft">Mijingo course</a>)</p>
+        </div>
+    </div>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/foundation/js/foundation.min.js"></script>
+    
+    <script>
+        $(document).foundation();
+    </script>
+    </body>
+    </html>
