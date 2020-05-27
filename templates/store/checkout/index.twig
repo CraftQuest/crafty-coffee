@@ -1,11 +1,7 @@
 {% if currentUser %}
     {% redirect 'store/checkout/addresses' %}
 {% endif %}
-<<<<<<< HEAD
 {% extends "_layouts/main" %}
-=======
-{% extends '_layouts/main' %}
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
 {% set cart = craft.commerce.carts.cart %}
 
 {% block main %}
@@ -16,7 +12,6 @@
         <div class="large-6 small-12 columns">
             <h4>Log In</h4>
             <form method="post" accept-charset="UTF-8">
-<<<<<<< HEAD
                 {{ csrfInput() }}
                 <input type="hidden" name="action" value="users/login">
                 {{ redirectInput('store/checkout/addresses') }}
@@ -27,36 +22,19 @@
                 <label for="password">Password</label>
                 <input id="password" class="u-full-width" type="password"
                        name="password">
-=======
-                {{ getCsrfInput() }}
-                <input type="hidden" name="action" value="users/login">
-                <input type="hidden" name="redirect" value="store/checkout/addresses">
-                <label for="loginName">Email</label>
-                <input id="loginName" class="u-full-width" type="text" name="loginName" placeholder="email@site.com"
-                       value="{{ craft.session.rememberedUsername }}">
-                <label for="password">Password</label>
-                <input id="password" class="u-full-width" type="password" name="password">
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                 <label>
                     <input type="checkbox" name="rememberMe" value="1">
                     Remember me
                 </label>
-<<<<<<< HEAD
                 <input type="submit" value="Login"
                        class="button small radius primary"/>
             </form>
             <p><a href="{{ url('forgotpassword') }}">Forget your password?</a>
             </p>
-=======
-                <input type="submit" value="Login" class="button small radius primary"/>
-            </form>
-            <p><a href="{{ url('forgotpassword') }}">Forget your password?</a></p>
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
         </div>
         <div class="large-6 small-12 columns">
             <h4>Guest Checkout</h4>
             <form method="POST">
-<<<<<<< HEAD
                 <input type="hidden" name="action"
                        value="commerce/cart/update-cart">
                 {{ redirectInput('store/checkout/addresses') }}
@@ -70,17 +48,4 @@
             </form>
         </div>
     </div>
-
-=======
-                <input type="hidden" name="action" value="commerce/cart/update-cart">
-                {{ redirectInput('store/checkout/addresses') }}
-                {{ csrfInput() }}
-                <label for="">Email</label>
-                <input class="u-full-width" type="text" value="{{ cart.email }}" name="email"
-                       placeholder="email@site.com"/>
-                <input type="submit" value="Continue as Guest" class="button small radius primary"/>
-            </form>
-        </div>
-    </div>
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
 {% endblock %}

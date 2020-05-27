@@ -24,7 +24,6 @@
                     </thead>
                     <tbody>
                     {% for item in cart.lineItems %}
-<<<<<<< HEAD
                     <form method="post">
                         <input type="hidden" name="action"
                                value="commerce/cart/update-cart">
@@ -37,16 +36,6 @@
                                 <input type="checkbox"
                                        name="lineItems[{{ item.id }}][remove]"
                                        value="1">
-=======
-                        <form method="post">
-                            <input type="hidden" name="action" value="commerce/cart/update-cart">
-                            <input type="hidden" name="cartUpdatedNotice" value="Updated line items.">
-                            {{ redirectInput('store/cart') }}
-                            {{ csrfInput() }}
-                        <tr>
-                            <td style="width:5%;">
-                                <input type="checkbox" name="lineItems[{{ item.id }}][remove]" value="1">
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                             </td>
                             <td>
                                 <strong>{{ item.description }}</strong><br>
@@ -55,7 +44,6 @@
                                 <br>
                             </td>
                             <td style="width:10%;">
-<<<<<<< HEAD
                                 <input type="hidden"
                                        name="lineItems[{{ item.id }}][id]"
                                        value="{{ item.id }}">
@@ -66,29 +54,14 @@
                             <td style="width:25%;" class="text-right">
                                 {{ item.price | currency(cart.currency) }}
                                 /ea<br>
-=======
-                                        <input type="hidden" name="lineItems[{{ item.id }}][id]" value="{{ item.id }}">
-                                        <input type="number" name="lineItems[{{ item.id }}][qty]" min="1" value="{{ item.qty }}">
-                            </td>
-                            <td style="width:25%;" class="text-right">
-                                {{ item.price | currency(cart.currency) }}/ea<br>
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                                 Subtotal: {{ item.subtotal | currency(cart.currency) }}
                             </td>
                         </tr>
-
-
-<<<<<<< HEAD
                         {% endfor %}
                         <input type="submit"
                                class="button tiny secondary radius"
                                value="Update">
                     </form>
-=======
-                    {% endfor %}
-                    <input type="submit" class="button tiny secondary radius" value="Update">
-                        </form>
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
 
                     {% for adjustment in cart.adjustments %}
                         <tr>
@@ -98,12 +71,8 @@
                                 {{ adjustment.description }}
                             </td>
                             <td></td>
-<<<<<<< HEAD
                             <td class="text-right">
                                 -{{ adjustment.amount | currency(cart.currency) }}</td>
-=======
-                            <td class="text-right">{{ adjustment.amount | currency(cart.currency) }}</td>
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                         </tr>
                     {% endfor %}
                     <tr>
@@ -111,12 +80,8 @@
 
                         <td>
                             <form method="POST">
-<<<<<<< HEAD
                                 <input type="hidden" name="action"
                                        value="commerce/cart/update-cart">
-=======
-                                <input type="hidden" name="action" value="commerce/cart/update-cart">
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                                 {{ redirectInput('store/cart') }}
                                 {{ csrfInput() }}
                                 <input type="text"
@@ -124,19 +89,14 @@
                                        class="{% if cart.getFirstError('couponCode') %}has-error{% endif %}"
                                        value="{{ cart.couponCode }}"
                                        placeholder="{{ "Coupon Code"|t }}">
-<<<<<<< HEAD
                                 <input type="submit"
                                        class="button tiny secondary radius"
                                        value="{% if cart.couponCode %}Change{% else %}Apply{% endif %} Coupon"/>
-=======
-                                <input type="submit" class="button tiny secondary radius" value="{% if cart.couponCode %}Change{% else %}Apply{% endif %} Coupon"/>
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                             </form>
                         </td>
                         <td>
                         </td>
                         <td class="text-right">
-<<<<<<< HEAD
                             Total
                             Discount: {{ cart.totalDiscount | currency(cart.currency) }}
                             <br>
@@ -148,17 +108,10 @@
                             <br>
                             <h4>
                                 Total: {{ cart.totalPrice | currency(cart.currency) }}</h4>
-=======
-                            Total Discount: {{ cart.totalDiscount | currency(cart.currency) }}<br>
-                            Total Shipping: {{ cart.totalShippingCost | currency(cart.currency) }}<br>
-                            Total Tax: {{ cart.totalTax | currency(cart.currency) }}<br>
-                            <h4>Total: {{ cart.totalPrice | currency(cart.currency) }}</h4>
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                         </td>
                     </tr>
                     </tbody>
                 </table>
-<<<<<<< HEAD
                 <a class="button medium secondary radius"
                    href="{{ url('/store') }}">Continue Shopping</a>
                 <a class="button medium primary radius"
@@ -168,14 +121,5 @@
                         get brewing!</a></p>
             {% endif %}
         </div>
-
-=======
-                <a class="button medium secondary radius" href="{{ url('/store') }}">Continue Shopping</a>
-                <a class="button medium primary radius" href="{{ url('store/checkout') }}">Checkout</a>
-            {% else %}
-                <p>You have no items in the cart. <a href="/store">Add some and get brewing!</a></p>
-            {% endif %}
-        </div>
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
     </div>
 {% endblock %}

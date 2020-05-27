@@ -9,11 +9,7 @@
     <div class="row">
         <div class="large-12 columns">
             <h4>Shipping Method</h4>
-<<<<<<< HEAD
             <form method="post">
-=======
-            <form method="POST">
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                 <input type="hidden" name="action" value="commerce/cart/update-cart">
                 {{ redirectInput('store/checkout/payment') }}
                 {{ csrfInput() }}
@@ -28,19 +24,5 @@
                     </div>
                 {% endfor %}
                 <p><input type="submit" class="button primary small radius" value="Select Shipping"/></p>
-<<<<<<< HEAD
             </form>
 {% endblock %}
-=======
-
-            </form>
-
-        </div>
-
-        <div class="large-12 small-12 columns">
-            <div class="large-6 columns address-card">
-            </div>
-        </div>
-    </div>
-{% endblock %}
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe

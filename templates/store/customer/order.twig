@@ -7,11 +7,7 @@
 {% block main %}
     <div class="row">
         <div class="intro large-12 small-12 columns">
-<<<<<<< HEAD
             <p>Order #{{ order.id }}</p>
-=======
-            <p>Order  #{{ order.id }}</p>
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
         </div>
     </div>
     <div class="row">
@@ -21,7 +17,6 @@
                 <div class="large-4 small-12 columns">
                     <h4>Details</h4>
                     <strong>Customer:</strong> {{ order.customer.email }}<br>
-<<<<<<< HEAD
                     <strong>Total:</strong> {{ order.totalPrice | currency(order.currency) }}
                     <br>
                     <strong>Date:</strong> {{ order.dateOrdered | date }}
@@ -37,23 +32,10 @@
                     {{ order.shippingAddress.city }}<br>
                     {% if order.shippingAddress.state is defined %}{{ order.shippingAddress.state }}
                         <br>{% endif %}
-=======
-                    <strong>Total:</strong> {{ order.totalPrice | currency(order.currency) }}<br>
-                    <strong>Date:</strong> {{ order.dateOrdered | date }}
-                </div>
-                <div class="large-4 columns">
-                    <h4>Shipping Address</h4>
-                    {{ order.shippingAddress.firstName }} {{ order.shippingAddress.lastName }}<br>
-                    {{ order.shippingAddress.address1 }}<br>
-                    {% if shippingAddress.address2 is defined %}{{ order.shippingAddress.address2 }}<br>{% endif %}
-                    {{ order.shippingAddress.city }}<br>
-                    {% if order.shippingAddress.state is defined %}{{ order.shippingAddress.state }}<br>{% endif %}
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                     {{ order.shippingAddress.zipCode }}
                     {{ order.shippingAddress.country }}
 
                 </div>
-<<<<<<< HEAD
                 {% endif %}
                 {% if order.billingAddress %}
                 <div class="large-4 columns">
@@ -66,29 +48,15 @@
                     {{ order.billingAddress.city }}<br>
                     {% if order.billingAddress.state is defined %}{{ order.billingAddress.state }}
                         <br>{% endif %}
-=======
-                <div class="large-4 columns">
-                    <h4>Billing Address</h4>
-                    {{ order.billingAddress.firstName }} {{ order.billingAddress.lastName }}<br>
-                    {{ order.billingAddress.address1 }}<br>
-                    {% if billingAddress.address2 is defined %}{{ order.billingAddress.address2 }}<br>{% endif %}
-                    {{ order.billingAddress.city }}<br>
-                    {% if order.billingAddress.state is defined %}{{ order.billingAddress.state }}<br>{% endif %}
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                     {{ order.billingAddress.zipCode }}
                     {{ order.billingAddress.country }}
                 </div>
             </div>
-<<<<<<< HEAD
             {% endif %}
             {% if order.pdfUrl %}
                 <h4>Receipt (<a
                             href="{{ order.getPdfUrl('receipt') }}">Download</a>)
                 </h4>
-=======
-            {% if order.pdfUrl %}
-                <h4>Receipt (<a href="{{ order.getPdfUrl('receipt') }}">Download</a>)</h4>
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
             {% endif %}
             <table class="large-12 columns">
                 <thead>
@@ -121,20 +89,15 @@
                 {% for adjustment in order.adjustments %}
                     <tr>
                         <td>{{ adjustment.type }}</td>
-<<<<<<< HEAD
                         <td colspan="2">
                             <strong>{{ adjustment.name }}</strong><br>({{ adjustment.description }}
                             )
                         </td>
-=======
-                        <td colspan="2"><strong>{{ adjustment.name }}</strong><br>({{ adjustment.description }})</td>
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                         <td class="text-right">{{ adjustment.amount|currency(order.currency) }}</td>
                     </tr>
                 {% endfor %}
                 <tr>
                     <td colspan="4" class="text-right">
-<<<<<<< HEAD
                         Item
                         Total: {{ order.itemTotal|currency(order.currency) }}
                         <br>
@@ -144,12 +107,6 @@
                             <br>{% endif %}
                         <h4>
                             Total: {{ order.storedTotalPrice|currency(order.currency) }}</h4>
-=======
-                        Item Total: {{ order.itemTotal|currency(order.currency) }}<br>
-                        {% if order.storedTotalDiscount > 0 %}Base Discount: {{ order.storedTotalDiscount|currency(order.currency) }}<br>{% endif %}
-                        {% if order.storedTotalShippingCost > 0 %}Base Shipping Cost: {{ order.storedTotalShippingCost|currency(order.currency) }}<br>{% endif %}
-                        <h4>Total: {{ order.storedTotalPrice|currency(order.currency) }}</h4>
->>>>>>> eabdac7572f763628aee79796d42e569640f5dfe
                     </td>
                 </tr>
                 </tbody>
