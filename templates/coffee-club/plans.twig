@@ -1,0 +1,62 @@
+{% extends "_layouts/main" %}
+
+{% block main %}
+    <div class="full-bleed-header"
+         style="background-size: 100%; height: 200px; background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(/images/coffee-shop.jpg); background-repeat: no-repeat, repeat;">
+        <div class="page-title text-center">
+            <h2 class="logo"><span class="scripty">Coffee Club</h2>
+        </div>
+    </div>
+    <div class="row">
+    <div class="intro">
+        <div class="large-12 small-12 columns">
+            <div class="large-6 small-12 columns">
+                <p>
+                    {% if currentUser %}
+                        <a href="{{ url('store/customer') }}"
+                           class="button small radius secondary">{{ "My Orders"|t }}</a>
+                        <a href="{{ url('store/customer/addresses') }}"
+                           class="button small radius secondary">{{ "My Addresses"|t }}</a>
+                        <a href="{{ logoutUrl }}" class="button small radius secondary">Logout</a>
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-2 large-4 columns">
+            <ul class="pricing-table">
+                <li class="title">Monthly Club</li>
+                <li class="price">$10.00</li>
+                <li class="description">1 lb of coffee beans per month, every month until you cancel.</li>
+                <li class="bullet-item">Monthly roasting newsletter</li>
+                <li class="bullet-item">Crafty Coffee mug with first delivery</li>
+                <li class="bullet-item">Premium recipes access</li>
+                <li class="cta-button"><a class="button" href="#">Give me the Beans</a></li>
+            </ul>
+        </div>
+        <div class="small-2 large-4 columns">
+            <ul class="pricing-table">
+                <li class="title">Monthly Club Plus</li>
+                <li class="price">$19.00</li>
+                <li class="description">2 lbs of coffee beans per month, every month until you cancel.</li>
+                <li class="bullet-item">Monthly roasting newsletter</li>
+                <li class="bullet-item">Crafty Coffee mug with first delivery</li>
+                <li class="bullet-item">Premium recipes access</li>
+                <li class="cta-button"><a class="button" href="#">Give me the Beans</a></li>
+            </ul>
+        </div>
+        <div class="small-2 large-4 columns">
+            <ul class="pricing-table">
+                <li class="title">Annual Club</li>
+                <li class="price">$99.00</li>
+                <li class="description">1 lb of coffee beans per month. Save $ by paying annually instead of monthly!</li>
+                <li class="bullet-item">1 lb of coffee beans per month</li>
+                <li class="bullet-item">Monthly roasting newsletter</li>
+                <li class="bullet-item">Crafty Coffee mug with first delivery</li>
+                <li class="bullet-item">Premium recipes access</li>
+                <li class="cta-button"><a class="button" href="#">Give me the Beans</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
