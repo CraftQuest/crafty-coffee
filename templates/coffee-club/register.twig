@@ -1,5 +1,7 @@
 {% extends "_layouts/main" %}
-
+{% if currentUser %}
+    {% redirect('coffee-club/subscribe?plan=' ~ craft.app.request.getParam('plan')) %}
+{% endif %}
 {% block main %}
     <div class="full-bleed-header"
          style="background-size: 100%; height: 200px; background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(/images/coffee-shop.jpg); background-repeat: no-repeat, repeat;">
@@ -26,7 +28,19 @@
     <div class="row">
         <h1>Register for a Crafty Coffee Account</h1>
         <p>The first step in signing up for the Coffee Club is to create you Crafty Coffee account. With this account you can manage your Coffee Club subscription.</p>
-        <form>
+        <form method="post">
+        {{ csrfInput() }}
+        {{ actionInput('users/save-user') }}
+        {{ redirectInput('coffee-club/subscribe?plan=' ~ craft.app.request.getParam('plan')) }}
+             {% macro errorList(errors) %}
+                {% if errors %}
+                    <ul class="errors">
+                        {% for error in errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endmacro %}
             <div class="row">
                 <div class="large-6 columns">
                     <label>First Name
@@ -64,7 +78,6 @@
                     <input type="submit" value="Continue" class="button radius" />
                 </div>
             </div>
-
         </form>
     </div>
 {% endblock %}

@@ -1,5 +1,5 @@
 {% extends "_layouts/main" %}
-
+{% set plans = craft.commerce.getPlans().getAllEnabledPlans() %}
 {% block main %}
     <div class="full-bleed-header"
          style="background-size: 100%; height: 200px; background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(/images/coffee-shop.jpg); background-repeat: no-repeat, repeat;">
@@ -24,18 +24,22 @@
         </div>
     </div>
     <div class="row">
+        {% for plan in plans %}
+        {% set planData = plan.planData | json_decode %}
+        {% set planInformation = plan.getInformation() ?? null %}
         <div class="small-2 large-4 columns">
             <ul class="pricing-table">
-                <li class="title">Monthly Club</li>
-                <li class="price">$10.00</li>
-                <li class="description">1 lb of coffee beans per month, every month until you cancel.</li>
-                <li class="bullet-item">Monthly roasting newsletter</li>
-                <li class="bullet-item">Crafty Coffee mug with first delivery</li>
-                <li class="bullet-item">Premium recipes access</li>
-                <li class="cta-button"><a class="button" href="#">Give me the Beans</a></li>
+                <li class="title">{{ plan.name }}</li>
+                <li class="price">{{ (planData.plan.amount / 100) | currency }}</li>
+                <li class="description">{{ planInformation.planDescription }}</li>
+                {% for feature in planInformation.planFeatures %}
+                <li class="bullet-item">{{ feature.feature }}</li>
+                {% endfor %}
+                <li class="cta-button"><a class="button" href="{{ url('coffee-club/register?plan=' ~ plan.uid) }}">Give me the Beans</a></li>
             </ul>
         </div>
-        <div class="small-2 large-4 columns">
+        {% endfor %}
+        {# <div class="small-2 large-4 columns">
             <ul class="pricing-table">
                 <li class="title">Monthly Club Plus</li>
                 <li class="price">$19.00</li>
@@ -57,6 +61,6 @@
                 <li class="bullet-item">Premium recipes access</li>
                 <li class="cta-button"><a class="button" href="#">Give me the Beans</a></li>
             </ul>
-        </div>
+        </div> #}
     </div>
 {% endblock %}
