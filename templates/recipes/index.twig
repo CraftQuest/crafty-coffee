@@ -1,0 +1,31 @@
+{% extends "_layouts/main" %}
+
+{% block main %}
+    <div class="full-bleed-header" style="background-size: 100%; height: 200px; background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(/images/drinks/espresso-shot.jpg); background-repeat: no-repeat, repeat;">
+        <div class="page-title text-center">
+            <h2 class="logo"><span class="scripty">Our Drinks</h2>
+        </div>
+    </div>
+    <div class="row page-content">
+        <div class="large-12 small-12 columns">
+            <p>{% if currentUser %} Hi, {{ currentUser.firstName }}, make our drinks.{% else %}Make our drinks.{% endif %}</p>
+            <table width="100%">
+                <tr>
+                    <th>Recipe Name</th>
+                <th>Style</th>
+                <th>Type</th>
+                </tr>
+                {% for recipe in craft.entries.section('recipes').limit(25).all() %}
+                <tr>
+                    <td><a href="{{ recipe.url }}">{{ recipe.title }}</a></td>
+                    {% set style = recipe.drinkStyle.one() %}
+                    <td><a href="{{ style.url }}">{{ style.title }}</a></td>
+                    <td>{% if recipe.premium %}Premium Recipe{% else %} Free Recipe {% endif %}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+
+{% endblock %}

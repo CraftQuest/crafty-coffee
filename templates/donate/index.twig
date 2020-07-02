@@ -1,0 +1,41 @@
+y{% extends "_layouts/main" %}
+{% block main %}
+        <ul class="breadcrumbs">
+        <li><a href="../">Home</a></li>
+        <li>Donate</li>
+    </ul>
+    <div class="full-bleed-header" style="background-size: 100%; height: 200px; background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(https://thepintpundits.files.wordpress.com/2013/02/dark-horse-tres-blueberry-stout-1.jpg); background-repeat: no-repeat, repeat;">
+        <div class="page-title text-center">
+            <h2 class="logo"><span class="scripty">Donate to Relief Fund</h2>
+            <p class="tagline reverse">Support your beloved baristas, roasters, and staff.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 small-12 columns">
+            <div class="intro large-12 small-12 columns text-center">
+                <p>Crafty Coffee employees have been furloughed and we've halted operations.</p>
+            </div>
+
+            <p>On March 15, 2020, Crafty Coffee halted operations in order to comply with city-wide shelter-in-place orders and to protect our employees and community. However, this means our business has come to a complete standstill and we cannot maintain our full staff. In order to help them out during this difficult time, we've established a donation fund that will go directly to them.</p>
+            <div class="large-12">
+                {% set donationPurchasable = craft.commerce.donation %}
+                <fieldset class="large-4">
+                <form method="post">
+                {{ redirectInput('store/checkout/payment') }}
+                {{ csrfInput() }}
+                    <input type="hidden" name="action" value="commerce/cart/update-cart">
+                    <input type="hidden" name="purchasableId" value="{{ donationPurchasable.id }}">
+                    
+                    <label for="donationAmount">Your generous donation</label>
+                    <input name="options[donationAmount]" value="" type="number" placeholder="25.00">
+                    
+                    <label for="email">Your email address (for your receipt)</label>
+                    <input name="email" type="text" class="large-3" value="" placeholder="you@you.com">
+                    
+                    <input class="button" type="submit" value="Donate">
+                </form>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+{% endblock %}

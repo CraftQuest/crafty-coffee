@@ -28,11 +28,12 @@
     <div class="row">
         <h1>Register for a Crafty Coffee Account</h1>
         <p>The first step in signing up for the Coffee Club is to create you Crafty Coffee account. With this account you can manage your Coffee Club subscription.</p>
-        <form method="post">
-        {{ csrfInput() }}
-        {{ actionInput('users/save-user') }}
-        {{ redirectInput('coffee-club/subscribe?plan=' ~ craft.app.request.getParam('plan')) }}
-             {% macro errorList(errors) %}
+        <form method="post" accept-charset="UTF-8">
+            {{ csrfInput() }}
+            {{ actionInput('users/save-user') }}
+            {{ redirectInput('coffee-club/subscribe?plan=' ~ craft.app.request.getParam('plan')) }}
+        
+            {% macro errorList(errors) %}
                 {% if errors %}
                     <ul class="errors">
                         {% for error in errors %}
@@ -41,6 +42,7 @@
                     </ul>
                 {% endif %}
             {% endmacro %}
+        
             <div class="row">
                 <div class="large-6 columns">
                     <label>First Name
@@ -78,6 +80,7 @@
                     <input type="submit" value="Continue" class="button radius" />
                 </div>
             </div>
+
         </form>
     </div>
 {% endblock %}

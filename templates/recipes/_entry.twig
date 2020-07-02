@@ -1,7 +1,6 @@
 {% extends "_layouts/main" %}
 
 {% block main %}
-
     <ul class="breadcrumbs">
         <li><a href="/recipes">Recipes</a></li>
         <li>{{ entry.title }}</li>
@@ -26,7 +25,9 @@
                 <li>Cost: varies</li>
                 <li>Yield: one double shot</li>
             </ul>
-        </div>          {% for block in entry.recipeContents %}
+        </div>          
+        {% if (not entry.premium) or (entry.premium and activeSubscriber) %}
+        {% for block in entry.recipeContents %}
         {% switch block.type %}
         {% case 'recipeImage' %}
             {% set image = block.image.one() %}
@@ -83,7 +84,11 @@
         {# End recipeTip Block #}
         {% endswitch %}
         {% endfor %}
-
+        {% else %}
+        <div class="panel radius snapshot large-12 small-12 columns">
+            <p>This is a premium recipe. <a href="/coffee-club">Sign up for the Coffee Club</a> to get access to this recipes and all of our premium recipes.</p>
+        </div>
+        {% endif %}
     </div>
     </div>
 

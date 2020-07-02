@@ -1,7 +1,4 @@
 {% extends "_layouts/main" %}
-{% if not currentUser %}
-    {% redirect('coffee-club/plans') %}
-{% endif %}
 {% block main %}
     <div class="full-bleed-header"
          style="background-size: 100%; height: 200px; background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(/images/coffee-shop.jpg); background-repeat: no-repeat, repeat;">
@@ -34,18 +31,18 @@
         {% set plans = craft.commerce.getPlans().getAllPlans() %}
         {% set plan = plans[0] %}
         {% set chosenPlan = craft.app.request.getParam('plan') %}
-        <form method="POST">
-        {{ csrfInput() }}
-        {{ actionInput('commerce/subscriptions/subscribe') }}
-        <input type="hidden" name="planUid" value="{{ plan.uid | hash }}">
-        {{ redirectInput('coffee-club') }}
+        <form method="post">
+            <input type="hidden" name="action" value="commerce/subscriptions/subscribe">
+            <input type="hidden" name="planUid" value="{{ plan.uid | hash }}">
+            {{ redirectInput('coffee-club') }}
+            {{ csrfInput() }}
             <div class="row">
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label>Your Coffee Club Plan</span></label>
                         <select name="planUid" id="planSelect">
                             {% for plan in plans %}
-                            <option {% if plan.uid == chosenPlan %}selected{% endif %} value="{{ plan.uid | hash }}">{{ plan.name }}</option>
+                            <option {% if plan.uid == chosenPlan %}selected{% endif %}  value="{{ plan.uid | hash }}">{{ plan.name }}</option>
                             {% endfor %}
                         </select>
 

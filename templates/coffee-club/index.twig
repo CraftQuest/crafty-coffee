@@ -1,5 +1,8 @@
 {% extends "_layouts/main" %}
 {# if logged out, forward to plans page #}
+{% if not currentUser %}
+    {% redirect('coffee-club/plans') %}
+{% endif %}
 {% block main %}
     <div class="full-bleed-header"
          style="background-size: 100%; height: 200px; background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(/images/coffee-shop.jpg); background-repeat: no-repeat, repeat;">
@@ -29,23 +32,69 @@
         <p>Your Coffee Club subscription is active and you should be receivng your coffee beans in the mail.</p>
     </div>
 
+    {# Get the subscriptions for this customer #}
+    {% set subscriptions = craft.subscriptions.user(currentUser).status('active').all() %}
+    {# End get subscriptions #}
+    {% if not subscriptions %}
+        {% redirect('/coffee-club/plans') %}
+    {% endif %}
     <div class="row">
         <table class="hover">
             <tr>
                 <th width="400">Subscription Plan</th>
                 <th>Next Billing Date</th>
-                <th>Amount</th>
                 <th>Status</th>
-                <th></th>
+                <th>Actions</th>
             </tr>
+            {% for subscription in subscriptions %}
             <tr>
-                <td>Coffee Club Monthly 1 lb</td>
-                <td>July 2, 2020</td>
-                <td>10.00</td>
-                <td>Active</td>
-                <td><button class="button radius tiny">Cancel Subscription</button></td>
+                <td>{{ subscription.name }}</td>
+                <td>{{subscription.nextPaymentDate|date('M d, Y')}}</td>
+                <td>{{ subscription.status | capitalize }}</td>
+                <td>
+                    {% if subscription.canReactivate() %}
+                    <form method="post">
+                        <input type="hidden" name="action" value="commerce/subscriptions/reactivate">
+                        <input type="hidden" name="subscriptionUid" value="{{ subscription.uid|hash }}">
+                        {{ csrfInput() }}
+                        <button type="submit" class="button tiny center ">Reactivate</button>
+                    </form>
+                    {% else %}
+                    <form method="post">
+                        <input type="hidden" name="action" value="commerce/subscriptions/cancel">
+                        <input type="hidden" name="subscriptionUid" value="{{ subscription.uid | hash }}" />
+                        {{ redirectInput('coffee-club') }}
+                        {{ csrfInput() }}
+                        {{ subscription.plan.getGateway().getCancelSubscriptionFormHtml(subscription) 
+                        | raw }}
+                        <button type="submit" class="button tiny">Unsubscribe</button>
+                    </form>
+                    {% endif %}
+                </td>
+ {#               <td>
+                    {% if subscription.canReactivate() %}
+                    <form method="post">
+                        <input type="hidden" name="action" value="commerce/subscriptions/reactivate">
+                        <input type="hidden" name="subscriptionUid" value="{{ subscription.uid|hash }}">
+                        {{ csrfInput() }}
+                        <button type="submit" class="button tiny center ">Reactivate</button>
+                    </form>
+                    {% else %}
+                    <form method="post">
+                        <input type="hidden" name="action" value="commerce/subscriptions/cancel">
+                        <input type="hidden" name="subscriptionUid" value="{{ subscription.uid | hash }}" />
+                        {{ redirectInput('coffee-club') }}
+                        {{ csrfInput() }}
+                        <input type="hidden" name="cancelOnPeriodEnd" value="{{ subscription.uid | hash }}:0">
+                        <p class="tiny"><em>Unsubscribe at end of next billing cycle.</em></p>
+                        <button type="submit" class="button tiny">Unsubscribe</button>
+                    </form>
+                    {% endif %}
+                </td> #}
             </tr>
+            {% endfor %}
         </table>
     </div>
+    
 
 {% endblock %}

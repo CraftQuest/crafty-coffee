@@ -1,4 +1,5 @@
 {% extends "_layouts/main" %}
+{# Get all plans #}
 {% set plans = craft.commerce.getPlans().getAllEnabledPlans() %}
 {% block main %}
     <div class="full-bleed-header"
@@ -25,42 +26,19 @@
     </div>
     <div class="row">
         {% for plan in plans %}
+        {% set information = plan.getInformation() ?? null %}
         {% set planData = plan.planData | json_decode %}
-        {% set planInformation = plan.getInformation() ?? null %}
         <div class="small-2 large-4 columns">
             <ul class="pricing-table">
                 <li class="title">{{ plan.name }}</li>
                 <li class="price">{{ (planData.plan.amount / 100) | currency }}</li>
-                <li class="description">{{ planInformation.planDescription }}</li>
-                {% for feature in planInformation.planFeatures %}
+                <li class="description">{{ information.planDescription }}</li>
+                {% for feature in information.planFeatures %}
                 <li class="bullet-item">{{ feature.feature }}</li>
                 {% endfor %}
-                <li class="cta-button"><a class="button" href="{{ url('coffee-club/register?plan=' ~ plan.uid) }}">Give me the Beans</a></li>
+                <li class="cta-button"><a class="button" href="{{ url('coffee-club/register?plan=' ~ plan.uid) }}">Give me the beans</a></li>
             </ul>
         </div>
         {% endfor %}
-        {# <div class="small-2 large-4 columns">
-            <ul class="pricing-table">
-                <li class="title">Monthly Club Plus</li>
-                <li class="price">$19.00</li>
-                <li class="description">2 lbs of coffee beans per month, every month until you cancel.</li>
-                <li class="bullet-item">Monthly roasting newsletter</li>
-                <li class="bullet-item">Crafty Coffee mug with first delivery</li>
-                <li class="bullet-item">Premium recipes access</li>
-                <li class="cta-button"><a class="button" href="#">Give me the Beans</a></li>
-            </ul>
-        </div>
-        <div class="small-2 large-4 columns">
-            <ul class="pricing-table">
-                <li class="title">Annual Club</li>
-                <li class="price">$99.00</li>
-                <li class="description">1 lb of coffee beans per month. Save $ by paying annually instead of monthly!</li>
-                <li class="bullet-item">1 lb of coffee beans per month</li>
-                <li class="bullet-item">Monthly roasting newsletter</li>
-                <li class="bullet-item">Crafty Coffee mug with first delivery</li>
-                <li class="bullet-item">Premium recipes access</li>
-                <li class="cta-button"><a class="button" href="#">Give me the Beans</a></li>
-            </ul>
-        </div> #}
     </div>
 {% endblock %}

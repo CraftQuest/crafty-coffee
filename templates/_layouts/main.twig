@@ -34,6 +34,17 @@
         </ul>
     </section>
 </nav>
+{#  Get logged-in status #}
+{% set activeSubscriber = false %}
+{% if currentUser %}
+    {# Get the subscriptions for this customer #}
+    {% set subscriptions = craft.subscriptions.user(currentUser).status('active').all() %}
+    {% if subscriptions %}
+        {% set activeSubscriber = true %}
+    {% endif %}
+{% endif %}
+{# End get subscriptions #}
+
 {% block main %}
     {# Overriding this with the extendee's templates content with the same block name #}
 {% endblock %}
