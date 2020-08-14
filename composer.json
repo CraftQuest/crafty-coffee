@@ -1,7 +1,7 @@
 {
   "require": {
     "am-impact/amcommand": "^3.1",
-    "craftcms/cms": "3.4.8",
+    "craftcms/cms": "3.4.22.1",
     "craftcms/feed-me": "4.2.0.1",
     "craftcms/redactor": "2.5.0",
     "nystudio107/craft-seomatic": "3.2.41",
