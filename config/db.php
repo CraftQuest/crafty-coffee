@@ -9,12 +9,12 @@
  */
 
 return [
-    'driver' => getenv('APPSETTING_DB_DRIVER'),
-    'server' => getenv('APPSETTING_DB_SERVER'),
-    'user' => getenv('APPSETTING_DB_USER'),
-    'password' => getenv('APPSETTING_DB_PASSWORD'),
-    'database' => getenv('APPSETTING_DB_DATABASE'),
-    'schema' => getenv('APPSETTING_DB_SCHEMA'),
-    'tablePrefix' => getenv('APPSETTING_DB_TABLE_PREFIX'),
-    'port' => getenv('APPSETTING_DB_PORT')
+    'driver' => getenv('DB_DRIVER'),
+    'server' => getenv('DB_SERVER'),
+    'user' => getenv('DB_USER'),
+    'password' => getenv('DB_PASSWORD'),
+    'database' => getenv('DB_DATABASE'),
+    'schema' => getenv('DB_SCHEMA'),
+    'tablePrefix' => getenv('DB_TABLE_PREFIX'),
+    'port' => getenv('DB_PORT')
 ];
