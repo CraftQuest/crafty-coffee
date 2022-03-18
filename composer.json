@@ -4,7 +4,7 @@
     "craftcms/cms": "3.4.8",
     "craftcms/feed-me": "4.2.0.1",
     "craftcms/redactor": "2.5.0",
-    "nystudio107/craft-seomatic": "3.2.41",
+    "nystudio107/craft-seomatic": "3.4.12",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "autoload": {
